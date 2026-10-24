@@ -34,6 +34,7 @@ Live-iso is configured and it works fine, do not go far beyond it for now.
 - [Desktop defaults and artwork preparation](docs/desktop-defaults.md)
 - [Package commands, updates, and recovery](docs/updates.md)
 - [Installer integration](docs/installer.md)
+- [Archiso live profile](docs/live-profile.md)
 
 ## Packaging
 

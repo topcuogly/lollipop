@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+# Fail visibly and retry via timer until both registration and catalog refresh succeed.
+flatpak --system remote-add --if-not-exists flathub /usr/share/lollipop/flathub.flatpakrepo
+flatpak --system update --appstream flathub

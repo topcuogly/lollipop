@@ -1,0 +1,7 @@
+[Unit]
+Description=Prepare ephemeral Lollipop live account
+Before=sddm.service
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/lollipop-live-setup
+RemainAfterExit=yes

@@ -1,0 +1,8 @@
+[Unit]
+Description=Try Flathub registration after boot, retry while offline
+[Timer]
+OnBootSec=5s
+OnUnitInactiveSec=60s
+Unit=lollipop-flathub.service
+[Install]
+WantedBy=timers.target

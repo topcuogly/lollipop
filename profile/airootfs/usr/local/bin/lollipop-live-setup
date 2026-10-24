@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+if ! id live &>/dev/null; then
+ useradd --create-home --groups wheel --shell /bin/bash live
+ passwd -d live
+fi
+locale-gen

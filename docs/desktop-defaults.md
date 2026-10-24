@@ -28,6 +28,6 @@ The old Alpha 0.3 wallpaper entry `Lollipop-Hypnotic-original` has no exact imag
 
 ## Runtime limitations
 
-The panel transparency and battery percentage settings are preserved, including the known visual issues. Window decoration configuration references `org.kde.lollipop`; its [separate package](../packaging/lollipop-decoration/README.md) is now imported and has passed a container build. The installer desktop entry and Calamares branding are now imported. `prepare-desktop.py` stages the Calamares logo from the main asset alongside the wallpaper packages. Full live-session setup and boot integration are still required. These dependencies must be supplied before testing a complete image.
+The panel transparency and battery percentage settings are preserved, including the known visual issues. Window decoration configuration references `org.kde.lollipop`; its [separate package](../packaging/lollipop-decoration/README.md) is now imported and has passed a container build. The installer desktop entry and Calamares branding are now imported. `prepare-desktop.py` stages the Calamares logo from the main asset alongside the wallpaper packages. The live-session setup and boot profile are now imported; full ISO orchestration and boot testing remain required. These dependencies must be supplied before testing a complete image.
 
 Automated checks cover user-home initialization and the layout script's requested settings. They do not prove the rendered Plasma appearance. Verify the assembled desktop in a fresh VM session before publishing an ISO.

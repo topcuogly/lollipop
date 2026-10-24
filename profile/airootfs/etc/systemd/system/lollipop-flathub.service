@@ -1,0 +1,8 @@
+[Unit]
+Description=Register official Flathub remote
+After=NetworkManager.service
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/bin/lollipop-flathub
+TimeoutStartSec=180
