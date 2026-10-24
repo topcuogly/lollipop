@@ -1,0 +1,3 @@
+app.zen_browser.zen
+org.libreoffice.LibreOffice
+com.belmoussaoui.Obfuscate
