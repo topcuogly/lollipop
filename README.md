@@ -1,5 +1,5 @@
 # Lollipop
-an Arch based GNU/Linux distribution with KDE Plasma.
+an Arch-based GNU/Linux distribution featuring KDE Plasma, for personal usage only.
 
 ## Status
 Lollipop is extremely experimental and you shouldn't install it on your device. 
