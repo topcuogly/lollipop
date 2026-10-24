@@ -27,5 +27,11 @@
     "version": "2.15.0",
     "url": "https://github.com/upscayl/upscayl/releases/download/v2.15.0/upscayl-2.15.0-linux.deb",
     "sha512": "18b6695587413bc7a7626eba2f47335b4ffd3e8055751b74f533a4e6fd6ee2d0ad20ea0ae5199947bc4bb9a41d7f2d1050f8dc5f996809e0cb4f626d1522de50"
+  },
+  "archiso": {
+    "commit": "723da192226e1c9d5def9168f13332793c82a85e",
+    "source": "https://github.com/archlinux/archiso",
+    "file": "vendor/archiso/mkarchiso",
+    "sha256": "8ea7a46ce39c0b6985322617b015f85fb1cd74ea72fa218898ea03d0eb968361"
   }
 }

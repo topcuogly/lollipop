@@ -1,6 +1,6 @@
 # Installer integration
 
-This import preserves Alpha 0.3's Calamares configuration and fixes from earlier hardware testing. The Archiso live profile is now imported, but pinned ISO tooling and orchestration are not yet complete; no end-to-end ISO validation is claimed.
+This import preserves Alpha 0.3's Calamares configuration and fixes from earlier hardware testing. The Archiso live profile and pinned ISO orchestration are now imported; no end-to-end ISO validation is claimed until a complete build and VM installation are tested.
 
 ## Files
 

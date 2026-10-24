@@ -35,6 +35,7 @@ Live-iso is configured and it works fine, do not go far beyond it for now.
 - [Package commands, updates, and recovery](docs/updates.md)
 - [Installer integration](docs/installer.md)
 - [Archiso live profile](docs/live-profile.md)
+- [Build instructions](docs/build.md)
 
 ## Packaging
 

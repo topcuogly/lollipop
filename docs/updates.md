@@ -40,7 +40,7 @@ Ext4 requires the explicit `--allow-no-snapshot` argument and does not receive B
 
 ## Signing and publishing
 
-`scripts/make-release.py` prepares a manifest and signs it locally using the build's `state/signing` directory and `state/signing-fingerprint`. Key generation and complete build orchestration are not yet imported. The script does not publish anything. Private keys and generated release artifacts belong outside tracked source files.
+`scripts/make-release.py` prepares a manifest and signs it locally using the build's `state/signing` directory and `state/signing-fingerprint`. Local key initialization and full build orchestration are available in `scripts/init-release-key.sh` and `scripts/build-full.sh`; see [build instructions](build.md). The script does not publish anything. Private keys and generated release artifacts belong outside tracked source files.
 
 ## Recovery and validation limits
 

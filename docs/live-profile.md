@@ -8,7 +8,7 @@ The live image uses systemd-boot on UEFI; GRUB is installed on the target system
 
 `profile/packages.x86_64` links to the canonical `packages/native.txt`. `profile/pacman.conf` selects the 2026-10-22 Arch snapshot for building; the target's repository configuration is in `profile/airootfs/etc/pacman.conf`. The build clock and pinned tool commits are recorded in `build.env`.
 
-Local packages must be built and supplied through a signed repository before mkarchiso runs. Archiso itself and complete ISO orchestration have not yet been imported. This profile alone is not a complete ISO build command.
+Local packages must be built and supplied through a signed repository before mkarchiso runs. The pinned Archiso entry point and complete ISO orchestration are now imported; see [build instructions](build.md). The profile alone is not the full build command.
 
 ## Live session and permissions
 
@@ -37,7 +37,7 @@ python3 scripts/prepare-live-profile.py \
 
 The output directory must not exist. The script stages generated artwork and Calamares branding, materializes the package list, removes package-owned files using the payload inventory, and injects the public keyring. This prevents the profile from overlaying the same persistent files installed by `lollipop-system`.
 
-The key argument is copied as supplied: maintainers must provide the intended public release keyring, never a private key. No signing key generation or publication happens in this script. The upcoming ISO orchestrator must attach the signed local package repository, configure an isolated cache, and call the pinned mkarchiso version.
+The key argument is copied as supplied: maintainers must provide the intended public release keyring, never a private key. No signing key generation or publication happens in this script. The ISO orchestrator attaches the signed local package repository, configures an isolated cache, and calls the pinned mkarchiso version.
 
 ## Checks
 

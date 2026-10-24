@@ -1,0 +1,614 @@
+{
+  "base": {
+    "version": "3-3",
+    "filename": "base-3-3-any.pkg.tar.zst",
+    "sha256": "e144d83f03b1a003d31bf9c83990bfe0a503bb7bd8721dee88d72c74606acd37",
+    "repo": "core"
+  },
+  "linux-lts": {
+    "version": "6.18.57-2",
+    "filename": "linux-lts-6.18.57-2-x86_64.pkg.tar.zst",
+    "sha256": "9ff0689940ce84f5eaf96d24d788940eb98d25d8be8abff887e2f3376915be58",
+    "repo": "core"
+  },
+  "linux-firmware": {
+    "version": "20260916-1",
+    "filename": "linux-firmware-20260916-1-any.pkg.tar.zst",
+    "sha256": "a8a0530fd63ae55413379afcdf4eacb7b13d271e7ae65cb4475f86e03a45eee7",
+    "repo": "core"
+  },
+  "intel-ucode": {
+    "version": "20260925-1",
+    "filename": "intel-ucode-20260925-1-any.pkg.tar.zst",
+    "sha256": "5323b35170c43a34ddfa9f442dc11a8d4d3b9b69c52be09896b9253c900ad7fc",
+    "repo": "extra"
+  },
+  "amd-ucode": {
+    "version": "20260916-1",
+    "filename": "amd-ucode-20260916-1-any.pkg.tar.zst",
+    "sha256": "d2c14fb3281ce3eea2f438cb6e8a20cb204f227563ba126e2cd9f37e270bfd15",
+    "repo": "core"
+  },
+  "mkinitcpio": {
+    "version": "42.2-1",
+    "filename": "mkinitcpio-42.2-1-any.pkg.tar.zst",
+    "sha256": "7c412bc5f45a145e11794d85d0c7945f038452a29655af4d4d433db1ae9db972",
+    "repo": "core"
+  },
+  "mkinitcpio-archiso": {
+    "version": "73-1",
+    "filename": "mkinitcpio-archiso-73-1-any.pkg.tar.zst",
+    "sha256": "e52560154f9c5580492ec1f5072851bb25530c134c11cf47cf4fc800566da520",
+    "repo": "extra"
+  },
+  "syslinux": {
+    "version": "6.04.pre3.r3.g05ac953c-5",
+    "filename": "syslinux-6.04.pre3.r3.g05ac953c-5-x86_64.pkg.tar.zst",
+    "sha256": "f2ab0414cbd0302591e99a1e59075ac878fb48aa8b86c221228b2316a120274e",
+    "repo": "core"
+  },
+  "networkmanager": {
+    "version": "1.58.1-2",
+    "filename": "networkmanager-1.58.1-2-x86_64.pkg.tar.zst",
+    "sha256": "691287ef230bdb50d72e42e6b0cf54ffc79cdb816b5c16a8c120ce39756d4cd1",
+    "repo": "extra"
+  },
+  "sudo": {
+    "version": "1.9.17.p2-6",
+    "filename": "sudo-1.9.17.p2-6-x86_64.pkg.tar.zst",
+    "sha256": "20c0467521c96e6ebdd14e23d4b9388252834adb8dcf4c4763092a117c4932ea",
+    "repo": "core"
+  },
+  "sddm": {
+    "version": "0.21.0-7",
+    "filename": "sddm-0.21.0-7-x86_64.pkg.tar.zst",
+    "sha256": "927cc24362cdc83b8c48532252ae4d41ade99dc5e65cb0fdeb9b6d69f7601a7a",
+    "repo": "extra"
+  },
+  "plasma-desktop": {
+    "version": "6.8.1-1",
+    "filename": "plasma-desktop-6.8.1-1-x86_64.pkg.tar.zst",
+    "sha256": "b6157231e19bc74441b56b5ea40c7b5b23c71e6782c31bb460b8835b830f3119",
+    "repo": "extra"
+  },
+  "plasma-workspace": {
+    "version": "6.8.1-1",
+    "filename": "plasma-workspace-6.8.1-1-x86_64.pkg.tar.zst",
+    "sha256": "cdf9499819303aab64f465d37f550ea8ad11a5cbe0b695646a5ad5be88074a27",
+    "repo": "extra"
+  },
+  "plasma-nm": {
+    "version": "6.8.1-1",
+    "filename": "plasma-nm-6.8.1-1-x86_64.pkg.tar.zst",
+    "sha256": "a50b58bc1fc9ff196da4755f819f55a93e98319d910f8b710386a106f9c230bc",
+    "repo": "extra"
+  },
+  "plasma-pa": {
+    "version": "6.8.1-1",
+    "filename": "plasma-pa-6.8.1-1-x86_64.pkg.tar.zst",
+    "sha256": "ca9a486f20af5833f49b1a9db142aff6347be225a261a3dd75250440fcc88974",
+    "repo": "extra"
+  },
+  "kscreen": {
+    "version": "6.8.1-1",
+    "filename": "kscreen-6.8.1-1-x86_64.pkg.tar.zst",
+    "sha256": "2136dfca4048e7e8fba96ec9c275b057ee45510caf5e726f2d160d658e22b46f",
+    "repo": "extra"
+  },
+  "powerdevil": {
+    "version": "6.8.1-1",
+    "filename": "powerdevil-6.8.1-1-x86_64.pkg.tar.zst",
+    "sha256": "a27c63120d49437abcfa073813a8b408a14b57b808b77d1379936ae87e9bd0d8",
+    "repo": "extra"
+  },
+  "polkit-kde-agent": {
+    "version": "6.8.1-1",
+    "filename": "polkit-kde-agent-6.8.1-1-x86_64.pkg.tar.zst",
+    "sha256": "bc231727b7114dab716809a234b39f8c9a89292523256f729d59d83f261401d5",
+    "repo": "extra"
+  },
+  "breeze": {
+    "version": "6.8.1-1",
+    "filename": "breeze-6.8.1-1-x86_64.pkg.tar.zst",
+    "sha256": "2a2e7e934c2966f2f0ab2b458ca2fafa980fed1027a1ff0dcccdeacfa109ce0c",
+    "repo": "extra"
+  },
+  "breeze-gtk": {
+    "version": "6.8.1-1",
+    "filename": "breeze-gtk-6.8.1-1-any.pkg.tar.zst",
+    "sha256": "06ec52caae465cf761f8d4f4713b38275cf3b79805e77594a196a84e9ebd8aac",
+    "repo": "extra"
+  },
+  "breeze-icons": {
+    "version": "6.31.0-1",
+    "filename": "breeze-icons-6.31.0-1-x86_64.pkg.tar.zst",
+    "sha256": "e9ab48135e849327523a3fb1f0a1d0994aa8561a747c7dec24ecca2c569b8bb8",
+    "repo": "extra"
+  },
+  "xdg-desktop-portal-kde": {
+    "version": "6.8.1-1",
+    "filename": "xdg-desktop-portal-kde-6.8.1-1-x86_64.pkg.tar.zst",
+    "sha256": "486720c3671b1ca069241e08ecca4e0330b748be13138e96a2b3a117bbd3de93",
+    "repo": "extra"
+  },
+  "xdg-user-dirs": {
+    "version": "0.20-1",
+    "filename": "xdg-user-dirs-0.20-1-x86_64.pkg.tar.zst",
+    "sha256": "d2d8d9cf22fca76652320c905056dfcf55201665d025ae2c3de60702a36bfa65",
+    "repo": "extra"
+  },
+  "qt6-svg": {
+    "version": "6.12.0-1",
+    "filename": "qt6-svg-6.12.0-1-x86_64.pkg.tar.zst",
+    "sha256": "922e48a36b2c8e1ac16c2b5f222f0e33e52fb2ec5384e69715eb427512af7ebf",
+    "repo": "extra"
+  },
+  "mesa": {
+    "version": "1:26.2.5-1",
+    "filename": "mesa-1:26.2.5-1-x86_64.pkg.tar.zst",
+    "sha256": "8362f54565d3b71557e6a4ebcf208f51af32e205f271f8d13991962030139bd1",
+    "repo": "extra"
+  },
+  "vulkan-virtio": {
+    "version": "1:26.2.5-1",
+    "filename": "vulkan-virtio-1:26.2.5-1-x86_64.pkg.tar.zst",
+    "sha256": "de78dc6a1127686da06853ade085ca2c58fc648d6d30b23917eeb0fc094b75f5",
+    "repo": "extra"
+  },
+  "xorg-xwayland": {
+    "version": "24.1.14-1",
+    "filename": "xorg-xwayland-24.1.14-1-x86_64.pkg.tar.zst",
+    "sha256": "ff0147866b9196feca370239854abb2a7c6d99f8c9de09330ec4cbe4542d0441",
+    "repo": "extra"
+  },
+  "pipewire": {
+    "version": "1:1.6.9-1",
+    "filename": "pipewire-1:1.6.9-1-x86_64.pkg.tar.zst",
+    "sha256": "86e9f3abe090517349f8a817bce53d79d119c3468f883169c91e5e8fa78c2945",
+    "repo": "extra"
+  },
+  "pipewire-audio": {
+    "version": "1:1.6.9-1",
+    "filename": "pipewire-audio-1:1.6.9-1-x86_64.pkg.tar.zst",
+    "sha256": "512d3daaa526cce2bf62df5f83a5134373d14cabe1d261e5df2a620fc2fec2cf",
+    "repo": "extra"
+  },
+  "pipewire-pulse": {
+    "version": "1:1.6.9-1",
+    "filename": "pipewire-pulse-1:1.6.9-1-x86_64.pkg.tar.zst",
+    "sha256": "4fff82542f55db9f2a0f16cf7cd0eba53bdc599c506686615442803cfc9302b2",
+    "repo": "extra"
+  },
+  "wireplumber": {
+    "version": "0.5.18-1",
+    "filename": "wireplumber-0.5.18-1-x86_64.pkg.tar.zst",
+    "sha256": "821be7b062cbab5455dd9b315d4823cceba27ba76120e2991e68e6583a09041b",
+    "repo": "extra"
+  },
+  "konsole": {
+    "version": "26.08.2-1",
+    "filename": "konsole-26.08.2-1-x86_64.pkg.tar.zst",
+    "sha256": "ac1e77f01599021d16043fb65e3e77f7d112329ffeaf4d334411118181370ea2",
+    "repo": "extra"
+  },
+  "dolphin": {
+    "version": "26.08.2-1",
+    "filename": "dolphin-26.08.2-1-x86_64.pkg.tar.zst",
+    "sha256": "64038fd392d05e5f47c722fcd839c26afe5205accb39caa7c4795ec97ae79d39",
+    "repo": "extra"
+  },
+  "kate": {
+    "version": "26.08.2-1",
+    "filename": "kate-26.08.2-1-x86_64.pkg.tar.zst",
+    "sha256": "1678e0514e1a9a49b7a27a0ba8ffb246aba2e5e67ff65f7ff4ceb38fb943de75",
+    "repo": "extra"
+  },
+  "ark": {
+    "version": "26.08.2-1",
+    "filename": "ark-26.08.2-1-x86_64.pkg.tar.zst",
+    "sha256": "b356797cfc9b1b149b1be38df0e4b3581853b7b79d5b70d7eddbd9f928626f84",
+    "repo": "extra"
+  },
+  "flatpak": {
+    "version": "1:1.18.4-2",
+    "filename": "flatpak-1:1.18.4-2-x86_64.pkg.tar.zst",
+    "sha256": "dc14c79146f4cd6b6f6ec16813ee99d9efbfe7538f75b5e3d4d214a09f3286ad",
+    "repo": "extra"
+  },
+  "discover": {
+    "version": "6.8.1-1",
+    "filename": "discover-6.8.1-1-x86_64.pkg.tar.zst",
+    "sha256": "9ac8d7cb468f86978d423a69428f63478d13b402f4a9bb6a562beae5a98f70c2",
+    "repo": "extra"
+  },
+  "noto-fonts": {
+    "version": "1:2026.10.01-1",
+    "filename": "noto-fonts-1:2026.10.01-1-any.pkg.tar.zst",
+    "sha256": "3cf6de13b1f3600ed782ff5e22eb6b3827fcc0ab5ee407bc0b121239fe19d949",
+    "repo": "extra"
+  },
+  "noto-fonts-emoji": {
+    "version": "1:2.057-1",
+    "filename": "noto-fonts-emoji-1:2.057-1-any.pkg.tar.zst",
+    "sha256": "d030b017c729065e1f6349a71ed573e8eeedf9f47a6f945e0d3178236e4418e8",
+    "repo": "extra"
+  },
+  "qemu-guest-agent": {
+    "version": "11.1.2-1",
+    "filename": "qemu-guest-agent-11.1.2-1-x86_64.pkg.tar.zst",
+    "sha256": "b02fb09ed4318b2c885c0e64915b4e2b4260690e207f535edf2ac24825814fa6",
+    "repo": "extra"
+  },
+  "okular": {
+    "version": "26.08.2-1",
+    "filename": "okular-26.08.2-1-x86_64.pkg.tar.zst",
+    "sha256": "8abbd49ed35b9a0691521181284f667f6e65a66b5840681243d67dca43f69a0d",
+    "repo": "extra"
+  },
+  "gwenview": {
+    "version": "26.08.2-1",
+    "filename": "gwenview-26.08.2-1-x86_64.pkg.tar.zst",
+    "sha256": "fd30737f2d21e491f2cfbd326eba558fdfc3a0b15819a667823a6360e1123607",
+    "repo": "extra"
+  },
+  "kcalc": {
+    "version": "26.08.2-1",
+    "filename": "kcalc-26.08.2-1-x86_64.pkg.tar.zst",
+    "sha256": "e6f41297add062109d460b437473628160bd11365fa294057acca60f4cebb79f",
+    "repo": "extra"
+  },
+  "spectacle": {
+    "version": "1:6.8.1-1",
+    "filename": "spectacle-1:6.8.1-1-x86_64.pkg.tar.zst",
+    "sha256": "9fb64cecebced98675af4fbcf89d1cd29c60f78a5e143524c85d4ec582b595fb",
+    "repo": "extra"
+  },
+  "plasma-systemmonitor": {
+    "version": "6.8.1-1",
+    "filename": "plasma-systemmonitor-6.8.1-1-x86_64.pkg.tar.zst",
+    "sha256": "eee1eecb088c08f62b1211a0302abe0067b7eec2da09a26761bed5ef40ea3d73",
+    "repo": "extra"
+  },
+  "obs-studio": {
+    "version": "32.2.2-1",
+    "filename": "obs-studio-32.2.2-1-x86_64.pkg.tar.zst",
+    "sha256": "160a66705327d25c617965bc2abbd92101443072a186ab682ee3f39d6c49746b",
+    "repo": "extra"
+  },
+  "kdenlive": {
+    "version": "26.08.2-2",
+    "filename": "kdenlive-26.08.2-2-x86_64.pkg.tar.zst",
+    "sha256": "846aef9ff8178ce8dec5e10221348b69a386fdd0c560dc89fd247b41fd4a0a82",
+    "repo": "extra"
+  },
+  "mpv": {
+    "version": "1:0.41.0-6",
+    "filename": "mpv-1:0.41.0-6-x86_64.pkg.tar.zst",
+    "sha256": "19d0bc2b43c9e0487caffe4be881e41a3c2f8261bac3f5bcabef254a78fba59a",
+    "repo": "extra"
+  },
+  "tenacity": {
+    "version": "1.3.5-2",
+    "filename": "tenacity-1.3.5-2-x86_64.pkg.tar.zst",
+    "sha256": "59012056841d2af5c6cd77fdcc0e0d3c7c8809cfb8947d5fcd86dd8842071a40",
+    "repo": "extra"
+  },
+  "inkscape": {
+    "version": "1.4.4-7",
+    "filename": "inkscape-1.4.4-7-x86_64.pkg.tar.zst",
+    "sha256": "62bf4737a283e2a130957394275b2bc1cc320615f7e076087864a1a15aecb64a",
+    "repo": "extra"
+  },
+  "qt6-tools": {
+    "version": "6.12.0-1",
+    "filename": "qt6-tools-6.12.0-1-x86_64.pkg.tar.zst",
+    "sha256": "bc45c9721e2fed7c7e85afc85e8653584bb7c90219af64b23769bd3e6fa46408",
+    "repo": "extra"
+  },
+  "archlinux-keyring": {
+    "version": "20260909-1",
+    "filename": "archlinux-keyring-20260909-1-any.pkg.tar.zst",
+    "sha256": "6a8ea16f51d3b305c18322d5884ca959f12c32a3f186873090fdc18465605293",
+    "repo": "core"
+  },
+  "spice-vdagent": {
+    "version": "0.23.0-1",
+    "filename": "spice-vdagent-0.23.0-1-x86_64.pkg.tar.zst",
+    "sha256": "fca52ef7f3b6f6f30d0223b64b559b1a0192d7dbbc79ce7c35b268299806fe86",
+    "repo": "extra"
+  },
+  "wl-clipboard": {
+    "version": "1:2.3.0-1",
+    "filename": "wl-clipboard-1:2.3.0-1-x86_64.pkg.tar.zst",
+    "sha256": "3ba82e724f496eeafe16a6e6f2a54f0bbf5e64f28bf8555a0d3ce4efa8c17693",
+    "repo": "extra"
+  },
+  "xclip": {
+    "version": "0.13-6",
+    "filename": "xclip-0.13-6-x86_64.pkg.tar.zst",
+    "sha256": "1b5377a50143052c4c714941818e967ecc6b1be1a0af696ce141a88b76227ade",
+    "repo": "extra"
+  },
+  "fastfetch": {
+    "version": "2.70.0-1",
+    "filename": "fastfetch-2.70.0-1-x86_64.pkg.tar.zst",
+    "sha256": "c9ccc974ca37000615fdb1deb9f451c854d1bce27396888129eae129ba274446",
+    "repo": "extra"
+  },
+  "grub": {
+    "version": "2:2.16-1",
+    "filename": "grub-2:2.16-1-x86_64.pkg.tar.zst",
+    "sha256": "ba96d8453efb54ec909a5d11598b8032c5b30c6654170bd5e6438d4b01bc0ffd",
+    "repo": "core"
+  },
+  "efibootmgr": {
+    "version": "18-4",
+    "filename": "efibootmgr-18-4-x86_64.pkg.tar.zst",
+    "sha256": "1e6166d0024f3f0de37919a51f5c00981e42e6e087937858cf82f30edf71f17e",
+    "repo": "core"
+  },
+  "os-prober": {
+    "version": "1.85-1",
+    "filename": "os-prober-1.85-1-x86_64.pkg.tar.zst",
+    "sha256": "051ebb68194de68683f8021e2bf9aba87318eae5cbdb787ae49c4a97aa557b95",
+    "repo": "extra"
+  },
+  "btrfs-progs": {
+    "version": "7.1-1",
+    "filename": "btrfs-progs-7.1-1-x86_64.pkg.tar.zst",
+    "sha256": "5151b1c783a376bc85c04bb7ddc6f816668db60d9e864a88042dbb286b146456",
+    "repo": "core"
+  },
+  "snapper": {
+    "version": "0.13.2-1",
+    "filename": "snapper-0.13.2-1-x86_64.pkg.tar.zst",
+    "sha256": "a904737a63f910fba288db78de55c6126f4952b5c28953780a541e7594d9185a",
+    "repo": "extra"
+  },
+  "cryptsetup": {
+    "version": "2.8.8-1",
+    "filename": "cryptsetup-2.8.8-1-x86_64.pkg.tar.zst",
+    "sha256": "322f0e79a7d659d5e645e96cad3d30966f7dd5476f984f96b50a4f4cea274640",
+    "repo": "core"
+  },
+  "dosfstools": {
+    "version": "4.2-5",
+    "filename": "dosfstools-4.2-5-x86_64.pkg.tar.zst",
+    "sha256": "03a7d8bd939a80418d9744afad00c22b91c4b411bdf9662744647c383a0ec503",
+    "repo": "core"
+  },
+  "e2fsprogs": {
+    "version": "1.47.4-1",
+    "filename": "e2fsprogs-1.47.4-1-x86_64.pkg.tar.zst",
+    "sha256": "a78971bbbe0ae89d15a0cbbc952e64462edc5a6f991c1bb9cefd0539ca548bd4",
+    "repo": "core"
+  },
+  "rsync": {
+    "version": "3.5.1-3",
+    "filename": "rsync-3.5.1-3-x86_64.pkg.tar.zst",
+    "sha256": "450464513cef80cf7da6a7b89ad8f976b40336b189233cdeeba0b462b75f4e75",
+    "repo": "extra"
+  },
+  "squashfs-tools": {
+    "version": "4.7.5-1",
+    "filename": "squashfs-tools-4.7.5-1-x86_64.pkg.tar.zst",
+    "sha256": "ebb145471e5a1c47b5bc49bbc21f83c6ab6ee61940ab5aeb5fea51d936407c9b",
+    "repo": "extra"
+  },
+  "gptfdisk": {
+    "version": "1.0.10-2",
+    "filename": "gptfdisk-1.0.10-2-x86_64.pkg.tar.zst",
+    "sha256": "d373298ab5a7ef322af1cdcea394c7a89d3c7e7c87f6ca6c5fd7550c9d06083c",
+    "repo": "extra"
+  },
+  "polkit": {
+    "version": "128-1",
+    "filename": "polkit-128-1-x86_64.pkg.tar.zst",
+    "sha256": "27a25617077c39f430ab5fe7aa8c9dd913711bd0f39745af123da0bf3fb1de07",
+    "repo": "extra"
+  },
+  "python": {
+    "version": "3.14.8-1",
+    "filename": "python-3.14.8-1-x86_64.pkg.tar.zst",
+    "sha256": "5195a93a744ca27725e6f6c4128d460899a8c3d5b887baaed9e42d582130a4f0",
+    "repo": "core"
+  },
+  "python-yaml": {
+    "version": "6.0.3-2",
+    "filename": "python-yaml-6.0.3-2-x86_64.pkg.tar.zst",
+    "sha256": "2d7a34423bff947fb00c37d8d38c9595440d370cb07710be60c0d373709a25b2",
+    "repo": "extra"
+  },
+  "gnupg": {
+    "version": "2.4.9-3",
+    "filename": "gnupg-2.4.9-3-x86_64.pkg.tar.zst",
+    "sha256": "c758ccf2d09d85b033b30828800844609f47016ee93cd790315dea3818a95cc5",
+    "repo": "core"
+  },
+  "zram-generator": {
+    "version": "1.2.1-1",
+    "filename": "zram-generator-1.2.1-1-x86_64.pkg.tar.zst",
+    "sha256": "753d8d4d3bb5902c94dcb5459d1e4c9a3280bcf2c5c24e1e4ee67703f430b89a",
+    "repo": "extra"
+  },
+  "kpmcore": {
+    "version": "26.08.2-1",
+    "filename": "kpmcore-26.08.2-1-x86_64.pkg.tar.zst",
+    "sha256": "84df3bcef1f5414230d4242ce81ac49ae8c13602b7eacb929cbec116ba05bc49",
+    "repo": "extra"
+  },
+  "libpwquality": {
+    "version": "1.4.5-7",
+    "filename": "libpwquality-1.4.5-7-x86_64.pkg.tar.zst",
+    "sha256": "1c7110f166d74ff3671b62e4242e6e21a59c483eb26bcd7b3e72d723b9d8bb2b",
+    "repo": "extra"
+  },
+  "yaml-cpp": {
+    "version": "0.9.0-1",
+    "filename": "yaml-cpp-0.9.0-1-x86_64.pkg.tar.zst",
+    "sha256": "13189b299139396239ddf3ea0a50bc9abc5a51f3d6c21e162716f5be4ad55369",
+    "repo": "extra"
+  },
+  "zed": {
+    "version": "1.25.2-1",
+    "filename": "zed-1.25.2-1-x86_64.pkg.tar.zst",
+    "sha256": "60606ae7a0ce8740710e58dd70bd3b442f28b228a7ed95c45c8ff5ed5d05de76",
+    "repo": "extra"
+  },
+  "opencode": {
+    "version": "2.1.2-1",
+    "filename": "opencode-2.1.2-1-x86_64.pkg.tar.zst",
+    "sha256": "65d34fecd200de5b5d3e5860036fd48f4d74e0980be7630fa59b2bc490b4ca4c",
+    "repo": "extra"
+  },
+  "qemu-desktop": {
+    "version": "11.1.2-1",
+    "filename": "qemu-desktop-11.1.2-1-x86_64.pkg.tar.zst",
+    "sha256": "00a63cb4b8408933a0f01f9ca9a58a89c747995a202e213e229eff8fbd65f2fd",
+    "repo": "extra"
+  },
+  "libvirt": {
+    "version": "1:12.8.0-1",
+    "filename": "libvirt-1:12.8.0-1-x86_64.pkg.tar.zst",
+    "sha256": "557ce55582330f653bb5293bd6201567edf214137bfa12701a7f85570bad0680",
+    "repo": "extra"
+  },
+  "virt-manager": {
+    "version": "5.1.0-4",
+    "filename": "virt-manager-5.1.0-4-any.pkg.tar.zst",
+    "sha256": "4f602b436853436c1ef482c55de97ff9a4788699e3a0794595463ed88d55f036",
+    "repo": "extra"
+  },
+  "edk2-ovmf": {
+    "version": "202608-1",
+    "filename": "edk2-ovmf-202608-1-any.pkg.tar.zst",
+    "sha256": "bee34c6036ebd0e96562b7330d2d3ddf75e240cfc44a6d506a5ccb6390eafb91",
+    "repo": "extra"
+  },
+  "dnsmasq": {
+    "version": "2.93-1",
+    "filename": "dnsmasq-2.93-1-x86_64.pkg.tar.zst",
+    "sha256": "443d70d2606549270b1ef52183926714e515f81413db33ff96006e23866ad790",
+    "repo": "extra"
+  },
+  "nftables": {
+    "version": "1:1.1.7-3",
+    "filename": "nftables-1:1.1.7-3-x86_64.pkg.tar.zst",
+    "sha256": "5a25cfdb19c370d01cfe81ce8c1e2e1fa9a2e05d51d1417578e8c425893a5b29",
+    "repo": "extra"
+  },
+  "qbittorrent": {
+    "version": "5.3.0-1",
+    "filename": "qbittorrent-5.3.0-1-x86_64.pkg.tar.zst",
+    "sha256": "7fd4a50b57ffca559c655bd9accec83a96743bd503071aeed8319ba8177e37d7",
+    "repo": "extra"
+  },
+  "torbrowser-launcher": {
+    "version": "0.3.9-1",
+    "filename": "torbrowser-launcher-0.3.9-1-any.pkg.tar.zst",
+    "sha256": "5246362f7a4601850b022f3f9614598d9cb394b7d35a00b1ae21bf00b875f8c2",
+    "repo": "extra"
+  },
+  "base-devel": {
+    "version": "1-2",
+    "filename": "base-devel-1-2-any.pkg.tar.zst",
+    "sha256": "412a2effe23751e1c11b2fa68155f1a29ecea5d9dc8ea8cef4e87b7b429d3201",
+    "repo": "core"
+  },
+  "clang": {
+    "version": "23.1.3-4",
+    "filename": "clang-23.1.3-4-x86_64.pkg.tar.zst",
+    "sha256": "cff0d6f8d72274ad630ce5445d781cc661ddd0578414c742f5a2f470c8ed9672",
+    "repo": "extra"
+  },
+  "gdb": {
+    "version": "18.1-1",
+    "filename": "gdb-18.1-1-x86_64.pkg.tar.zst",
+    "sha256": "df58d8324b737daa8d300c0669af45a9cbcff5b4a0f6bffe4bfbbfa10aac5ff8",
+    "repo": "extra"
+  },
+  "cmake": {
+    "version": "4.4.4-1",
+    "filename": "cmake-4.4.4-1-x86_64.pkg.tar.zst",
+    "sha256": "d9deb07a41610c2ffc8ab543bdbf033d647015088638e846c0a843ede3631b31",
+    "repo": "extra"
+  },
+  "ninja": {
+    "version": "1.13.2-3",
+    "filename": "ninja-1.13.2-3-x86_64.pkg.tar.zst",
+    "sha256": "19e12c1a169d27e427c3fa678ed3573825ac2a1043c6d47dd96e76ec3d34236c",
+    "repo": "extra"
+  },
+  "pkgconf": {
+    "version": "3.0.10-1",
+    "filename": "pkgconf-3.0.10-1-x86_64.pkg.tar.zst",
+    "sha256": "ebc5c0d48f84b21c5b4fe80c9ee4106ad5944a0b32dbb61a30edbd154b398e92",
+    "repo": "core"
+  },
+  "python-pip": {
+    "version": "26.2.2-1",
+    "filename": "python-pip-26.2.2-1-any.pkg.tar.zst",
+    "sha256": "079a462a2fad76f087d1d07159b543fb49393a323cac502203e967bd91e372c4",
+    "repo": "extra"
+  },
+  "python-pipx": {
+    "version": "1.15.0-1",
+    "filename": "python-pipx-1.15.0-1-any.pkg.tar.zst",
+    "sha256": "e4f2efd943f61fe35dc4f4ad322104585a69507040182695509fa4c0fb457234",
+    "repo": "extra"
+  },
+  "rust": {
+    "version": "1:1.99.1-1",
+    "filename": "rust-1:1.99.1-1-x86_64.pkg.tar.zst",
+    "sha256": "d81d9152170af841156c114fed543dc2e3d71f681bb786737cd8c0c015a93672",
+    "repo": "extra"
+  },
+  "rust-src": {
+    "version": "1:1.99.1-1",
+    "filename": "rust-src-1:1.99.1-1-x86_64.pkg.tar.zst",
+    "sha256": "f32dd846b66a72146e70ecbe6a1117ae8b5f5271b3602d7945b02c28cc2c4877",
+    "repo": "extra"
+  },
+  "rust-analyzer": {
+    "version": "20260907-1",
+    "filename": "rust-analyzer-20260907-1-x86_64.pkg.tar.zst",
+    "sha256": "a5d84913804186e3d890a927483e0f71d89df30a511786f38876f4e262779024",
+    "repo": "extra"
+  },
+  "git": {
+    "version": "2.56.0-1",
+    "filename": "git-2.56.0-1-x86_64.pkg.tar.zst",
+    "sha256": "2da35402982c74083251b56bb04ee53bc14377dcc58cbb7e8682f1980beaee83",
+    "repo": "extra"
+  },
+  "curl": {
+    "version": "8.23.0-1",
+    "filename": "curl-8.23.0-1-x86_64.pkg.tar.zst",
+    "sha256": "ed3e4e252073137ee6b1267f3476a13680ff6b3dbdc7ddc6a8d1497fa60cd6d0",
+    "repo": "core"
+  },
+  "wget": {
+    "version": "1.25.0-6",
+    "filename": "wget-1.25.0-6-x86_64.pkg.tar.zst",
+    "sha256": "b13fda4c67cf71c8a913e0109dc6bd42cca0ac5562e165db2a63885e42c42217",
+    "repo": "extra"
+  },
+  "btop": {
+    "version": "1.4.7-1",
+    "filename": "btop-1.4.7-1-x86_64.pkg.tar.zst",
+    "sha256": "45ec50d17caebffad33ed482db6770682c35b2b3d89ef55c5f0b6a068c816fb7",
+    "repo": "extra"
+  },
+  "arch-install-scripts": {
+    "version": "31-2",
+    "filename": "arch-install-scripts-31-2-any.pkg.tar.zst",
+    "sha256": "21844567f7811bb957cb57982c697ff6a466a13ea3c8ad2cd159a7603c83608e",
+    "repo": "extra"
+  },
+  "kdialog": {
+    "version": "26.08.2-1",
+    "filename": "kdialog-26.08.2-1-x86_64.pkg.tar.zst",
+    "sha256": "eac5752d787ebbbff326cd0a8328893c2bded921bc344b7995b80ddb75107a14",
+    "repo": "extra"
+  }
+}
