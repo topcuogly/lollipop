@@ -1,0 +1,16 @@
+# SPDX-License-Identifier: GPL-3.0-only
+pkgname=lollipop-system
+pkgver=0.3
+pkgrel=1
+pkgdesc='Lollipop identity, desktop defaults and signed update/recovery tools'
+arch=('any')
+license=('GPL-3.0-only' 'MIT' 'MPL-2.0' 'BSD-3-Clause' 'LicenseRef-UserProvided')
+depends=('python' 'gnupg' 'snapper' 'btrfs-progs' 'fastfetch')
+source=('lollipop-system.tar')
+# Source digest is written by scripts/make-system-payload.py before makepkg.
+sha256sums=('SOURCE_DIGEST')
+backup=('etc/lollipop/release.json' 'etc/lollipop/update-channel.json')
+package() {
+ cp -a payload/. "$pkgdir/"
+ chmod 440 "$pkgdir/etc/sudoers.d/20-lollipop-admin"
+}
