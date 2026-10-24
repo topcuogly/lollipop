@@ -9,7 +9,7 @@ done
 python3 "$ROOT/tests/check-build-inputs.py"
 [[ -f "$ROOT/state/calamares/calamares-3.4.2.tar" ]] || { echo 'Run python3 scripts/prepare-calamares.py before validation.' >&2; exit 1; }
 python3 "$ROOT/tests/check-calamares.py"
-for test in updates transactions signatures installer-regressions user-defaults package-commands live-profile build-orchestration; do
+for test in updates transactions signatures installer-regressions user-defaults package-commands live-profile live-launcher build-orchestration; do
  python3 "$ROOT/tests/test-$test.py"
 done
 # The layout contract test is optional on minimal builders; it is not a visual test.

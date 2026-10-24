@@ -5,3 +5,14 @@ if ! id live &>/dev/null; then
  passwd -d live
 fi
 locale-gen
+
+# Prepare the actual XDG desktop before Plasma starts, not only through autostart.
+runuser -u live -- xdg-user-dirs-update
+desktop=$(runuser -u live -- xdg-user-dir DESKTOP)
+[[ -n "$desktop" && "$desktop" == /* ]] || { echo 'Invalid Live desktop directory' >&2; exit 1; }
+if [[ "$desktop" == /home/live ]]; then
+ desktop=/home/live/Desktop
+ runuser -u live -- xdg-user-dirs-update --set DESKTOP "$desktop"
+fi
+install -d -o live -g live "$desktop"
+install -o live -g live -m 755 /usr/share/applications/install-lollipop.desktop "$desktop/install-lollipop.desktop"

@@ -1,12 +1,22 @@
 // Plasma 6.8 scripting API. This script is for a fresh Live home only.
 // Plasma 6.8 panelview.cpp maps AlignRight to AnchorBottom for vertical panels.
 var screens = desktops();
-for (var n = 0; n < screens.length; ++n) { screens[n].currentConfigGroup = ["General"]; screens[n].writeConfig("url", "desktop:/"); }
+for (var n = 0; n < screens.length; ++n) {
+    screens[n].currentConfigGroup = ["General"];
+    screens[n].writeConfig("url", "desktop:/");
+    // Folder View shows the executable desktop file prepared before SDDM.
+    // A plain desktop needs an explicit Icon widget instead.
+    if (typeof lollipopLive !== "undefined" && lollipopLive && screens[n].type !== "org.kde.plasma.folder") {
+        var installer = screens[n].addWidget("org.kde.plasma.icon", 24, 48, 112, 112);
+        installer.currentConfigGroup = ["General"];
+        installer.writeConfig("url", "file:///usr/share/applications/install-lollipop.desktop");
+    }
+}
 var previous = panels();
 for (var i = 0; i < previous.length; ++i) previous[i].remove();
 var top = new Panel;
 top.location = "top";
-top.height = 36; // Provisional: exact height was left open in the archive.
+top.height = 28;
 top.lengthMode = "fill";
 top.floating = true;
 top.hiding = "none";

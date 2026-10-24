@@ -47,3 +47,11 @@ python3 tests/test-installer-regressions.py
 ```
 
 Tests cover staging boundaries, service links, kernel paths, permission declarations, branding, and exclusion of package-owned files. They do not boot the ISO. A full build, UEFI/BIOS VM boot, one-click installer launch, installation, and reboot remain required after orchestration is imported.
+
+## Desktop installer visibility
+
+Before SDDM starts, live setup initializes XDG user directories and installs an executable, live-owned installer launcher into the actual desktop directory (including localized paths). If desktop display is disabled by pointing XDG_DESKTOP_DIR at the home directory, setup restores `/home/live/Desktop`.
+
+The initial Plasma layout uses a 28-pixel top panel. In the live session, a plain desktop containment additionally receives an explicit Icon widget for the installer; Folder View uses the prepared desktop file, avoiding a duplicate icon. Installed sessions do not receive this live-only widget. Per-user defaults run before the initialization-marker check, allowing the desktop file to be repaired without rebuilding the whole panel layout.
+
+The Icon widget's `General/url` setting follows the [pinned KDE configuration schema](https://github.com/KDE/plasma-workspace/blob/v6.8.1/applets/icon/main.xml). Mock tests cover Folder View versus plain desktop, installed-session exclusion, localized XDG paths and disabled desktop fallback. Actual rendering must still be confirmed in the next live image.

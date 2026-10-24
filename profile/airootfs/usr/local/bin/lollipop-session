@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
 set -euo pipefail
 marker="$HOME/.config/lollipop-alpha03-initialized"
-[[ -e "$marker" ]] && exit 0
 /usr/local/bin/lollipop-user-defaults
+[[ -e "$marker" ]] && exit 0
 # A new Live home is created every boot. Existing installed user homes are out of scope.
 for attempt in {1..30}; do
  if qdbus6 org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript '"ready"' >/dev/null 2>&1; then
   plasma-apply-colorscheme SoftObsidian
   plasma-apply-desktoptheme soft-obsidian
   plasma-apply-wallpaperimage /usr/share/wallpapers/Lollipop/contents/images/1672x941.png
-  result=$(qdbus6 org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "$(cat /usr/share/lollipop/layout.js)")
+  live=false
+  [[ ${USER:-} != live || ! -d /run/archiso ]] || live=true
+  result=$(qdbus6 org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "var lollipopLive=$live; $(cat /usr/share/lollipop/layout.js)")
   [[ "$result" == *LOLLIPOP_LAYOUT_OK* ]] || { printf '%s\n' "$result" >&2; exit 1; }
   touch "$marker"
   exit 0

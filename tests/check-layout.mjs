@@ -20,6 +20,7 @@ assert.ok(removed);
 assert.equal(created.length, 2);
 const [top, dock] = created;
 assert.equal(top.location, 'top');
+assert.equal(top.height, 28);
 assert.equal(top.lengthMode, 'fill');
 assert.equal(top.floating, true);
 assert.equal(top.widgets[0].type, 'org.kde.plasma.activitybar');
@@ -40,3 +41,17 @@ assert.equal(dock.widgets[1].type, 'org.kde.plasma.kickoff');
 assert.equal(dock.widgets[1].settings.icon, 'lollipop-launcher');
 
 assert.deepEqual(Array.from(dock.widgets[0].settings.launchers), ["applications:virt-manager.desktop", "applications:org.kde.dolphin.desktop", "applications:app.zen_browser.zen.desktop", "applications:dev.zed.Zed.desktop", "applications:org.libreoffice.LibreOffice.desktop"]);
+
+// Plain desktops need a widget, Folder View needs only the prepared desktop file.
+for (const live of [false, true]) {
+ const icons = [];
+ const desktops = ['org.kde.desktopcontainment', 'org.kde.plasma.folder'].map(type => ({
+  type, writeConfig() {}, addWidget(type, ...geometry) {
+   const widget = {type, geometry, settings: {}, writeConfig(key, value) {this.settings[key] = value;}};
+   icons.push(widget); return widget;
+  }
+ }));
+ vm.runInNewContext(fs.readFileSync(file, 'utf8'), {Panel, lollipopLive: live, desktops: () => desktops, panels: () => [], print() {}});
+ assert.equal(icons.length, live ? 1 : 0);
+ if (live) assert.equal(icons[0].settings.url, 'file:///usr/share/applications/install-lollipop.desktop');
+}
