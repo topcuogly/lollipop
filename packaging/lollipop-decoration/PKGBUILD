@@ -1,0 +1,38 @@
+# SPDX-License-Identifier: GPL-3.0-only
+pkgname=lollipop-decoration
+pkgver=6.8.1
+pkgrel=1
+pkgdesc='Lollipop rounded window decoration, derived from pinned KDE Breeze'
+arch=('x86_64')
+license=('GPL-2.0-or-later')
+depends=('breeze=6.8.1' 'kdecoration')
+makedepends=('python' 'cmake' 'ninja' 'extra-cmake-modules' 'kcmutils' 'kiconthemes' 'kcolorscheme' 'qt6-declarative' 'qt6-svg')
+options=('!debug')
+source=("breeze-${pkgver}.tar.gz::https://github.com/KDE/breeze/archive/refs/tags/v${pkgver}.tar.gz")
+sha256sums=('18b35135d2fe894e63cb1a0035e4ddd9b126179da8236193a80bafcf39ae3703')
+prepare() {
+ cd breeze-6.8.1
+ python - <<'PYJSON'
+import json
+from pathlib import Path
+for name,old,new in [('kdecoration/breeze.h','Frame_FrameRadius = 2.5','Frame_FrameRadius = 4.5'),('kdecoration/CMakeLists.txt','OUTPUT_NAME org.kde.breeze','OUTPUT_NAME org.kde.lollipop')]:
+    path=Path(name);text=path.read_text()
+    if text.count(old)!=1:raise SystemExit('Unexpected upstream source: '+name)
+    path.write_text(text.replace(old,new))
+p=Path('kdecoration/breeze.json');d=json.loads(p.read_text());plugin=d['KPlugin']
+for k in list(plugin):
+ if k=='Name' or k.startswith('Name['):del plugin[k]
+plugin['Name']='Lollipop Rounded'
+plugin['Id']='org.kde.lollipop'
+p.write_text(json.dumps(d,indent=2))
+PYJSON
+}
+build() {
+ cmake -S breeze-6.8.1 -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_QT5=OFF -DBUILD_TESTING=OFF -DBUILD_CURSOR=OFF -DWITH_WALLPAPERS=OFF
+ cmake --build build --target breezedecoration --parallel "${LOLLIPOP_JOBS:-4}"
+}
+package() {
+ # Only the renamed plugin is shipped. Shared Breeze libraries and configuration UI
+ # remain provided by the matching official breeze dependency.
+ install -Dm755 build/bin/org.kde.lollipop.so "$pkgdir/usr/lib/qt6/plugins/org.kde.kdecoration3/org.kde.lollipop.so"
+}

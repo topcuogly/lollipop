@@ -4,5 +4,12 @@
     "url": "https://dist.torproject.org/torbrowser/15.0.26/tor-browser-linux-x86_64-15.0.26.tar.xz",
     "sha256": "327ac7443724b9eb6d3697506391b110ee159739bdc14bd731caa6fc16ffbf74",
     "signing_fingerprint": "EF6E286DDA85EA2A4BA7DE684E2C6E8793298290"
+  },
+  "lollipop-decoration": {
+    "version": "6.8.1-1",
+    "source": "https://github.com/KDE/breeze/archive/refs/tags/v6.8.1.tar.gz",
+    "sha256": "18b35135d2fe894e63cb1a0035e4ddd9b126179da8236193a80bafcf39ae3703",
+    "frame_radius": 4.5,
+    "plugin_id": "org.kde.lollipop"
   }
 }

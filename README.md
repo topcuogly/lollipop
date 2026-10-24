@@ -38,6 +38,8 @@ Live-iso is configured and it works fine, do not go far beyond it for now.
 
 - [lollipop-system](packaging/lollipop-system/README.md) — Alpha 0.3 package recipe, complete payload preparation, and standalone build instructions.
 
+- [lollipop-decoration](packaging/lollipop-decoration/README.md) — rounded KWin window decoration derived from Breeze 6.8.1.
+
 ## License
 
 Original Lollipop code and documentation are licensed under [GNU GPLv3](LICENSE) (`GPL-3.0-only`). Artwork and third-party components have separate terms; see [licensing scope](LICENSES.md).

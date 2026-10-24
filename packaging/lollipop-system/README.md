@@ -23,7 +23,7 @@ The resulting package is unsigned unless your local makepkg configuration reques
 
 The package includes Tor/Flatpak launchers, a default libvirt network service and enablement links, Zram configuration, and the wheel administration policy. It also preserves the Alpha 0.3 `systemd-coredumpd.service` mask. The live passwordless sudo rule and `/etc/skel/.bashrc` are deliberately excluded. The packaged wheel rule is installed with mode `0440`.
 
-Plasma, Konsole and Qt tools are declared dependencies. The configured custom window decoration is a separate package still to be imported. The installed updater also needs the installer's boot metadata, a trusted release key and a configured release channel before real updates can be used. Building this package does not supply a complete ISO or a deployed update service.
+Plasma, Konsole and Qt tools are declared dependencies. The configured custom window decoration is supplied by the separate [lollipop-decoration](../lollipop-decoration/README.md) package. The installed updater also needs the installer's boot metadata, a trusted release key and a configured release channel before real updates can be used. Building this package does not supply a complete ISO or a deployed update service.
 
 The browser lock, detached upstream signature, and public verification keyring are tracked; the downloaded browser and generated packages are ignored build state. See [vendor provenance](../../vendor/README.md), [desktop defaults](../../docs/desktop-defaults.md), and [updates](../../docs/updates.md).
 
