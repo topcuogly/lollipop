@@ -1,0 +1,9 @@
+[General]
+ColorScheme=SoftObsidian
+Name=Soft Obsidian
+BrowserApplication=app.zen_browser.zen.desktop
+[KDE]
+LookAndFeelPackage=org.kde.breezedark.desktop
+SingleClick=true
+[Icons]
+Theme=breeze-dark

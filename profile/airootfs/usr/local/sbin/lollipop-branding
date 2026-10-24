@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+# Restore distribution identity after filesystem package transactions as well.
+for file in /etc/os-release /usr/lib/os-release; do
+ rm -f -- "$file"
+ install -m 644 /usr/share/lollipop/os-release "$file"
+done
+printf 'DISTRIB_ID=Lollipop\nDISTRIB_RELEASE=0.3\nDISTRIB_DESCRIPTION="Lollipop Alpha 0.3"\n' > /etc/lsb-release
+printf '%s\n' 'Lollipop Alpha 0.3 \n \l' > /etc/issue
+printf '%s\n' 'Welcome to Lollipop Alpha 0.3' > /etc/motd

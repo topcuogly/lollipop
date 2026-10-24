@@ -1,0 +1,6 @@
+[org.kde.kdecoration2]
+library=org.kde.lollipop
+ButtonsOnLeft=
+ButtonsOnRight=IAX
+[Plugins]
+blurEnabled=true

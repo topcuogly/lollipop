@@ -12,7 +12,7 @@ The live-only passwordless sudo policy is not included in this package. The pack
 
 This is a staged import, not yet a standalone buildable package. Required inputs have not all been imported into this repository:
 
-- The selected files under `profile/airootfs/`.
+- The remaining service, application, update/recovery, and policy files under `profile/airootfs/`. Desktop and identity files are already imported; see [desktop defaults](../../docs/desktop-defaults.md).
 - `state/tor-browser.tar.xz`, downloaded and verified by the original build's `prepare-tor.py` using its version lock and upstream signature.
 - The original build orchestration and signing configuration.
 
@@ -24,4 +24,4 @@ The preparation script also records selected profile paths in `state/system-payl
 
 ## Import boundaries
 
-Generated archives, binary packages, browser downloads, signing keys, and local build state are not included here. Profile files and related preparation scripts will be imported in subsequent steps. Original Lollipop code and this recipe are licensed under GPL-3.0-only. The package license array also retains the existing payload license entries for incorporated material. See [licensing scope](../../LICENSES.md); supplied artwork and upstream components are not relicensed by this change.
+Generated archives, binary packages, browser downloads, signing keys, and local build state are not included here. The remaining profile files and browser preparation scripts will be imported in subsequent steps. Desktop artwork is generated from `assets/` by `scripts/prepare-desktop.py` (requires Python and Pillow). Original Lollipop code and this recipe are licensed under GPL-3.0-only. The package license array also retains the existing payload license entries for incorporated material. See [licensing scope](../../LICENSES.md); supplied artwork and upstream components are not relicensed by this change.

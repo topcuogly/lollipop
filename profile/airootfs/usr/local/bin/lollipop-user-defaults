@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+"""Per-user Places and Live desktop setup, idempotent and preserves user bookmarks."""
+from pathlib import Path
+import os,subprocess,tempfile,xml.etree.ElementTree as ET
+home=Path.home()
+for folder in ['Applications','Trashfiles','Projects']:(home/folder).mkdir(exist_ok=True)
+places=home/'.local/share/user-places.xbel';places.parent.mkdir(parents=True,exist_ok=True)
+if places.exists():
+    tree=ET.parse(places);root=tree.getroot()
+else:
+    root=ET.Element('xbel',{'version':'1.0'});tree=ET.ElementTree(root)
+    for label,url,icon in [('Home',home.as_uri(),'user-home'),('Desktop',(home/'Desktop').as_uri(),'user-desktop'),('Documents',(home/'Documents').as_uri(),'folder-documents'),('Downloads',(home/'Downloads').as_uri(),'folder-downloads'),('Music',(home/'Music').as_uri(),'folder-music'),('Pictures',(home/'Pictures').as_uri(),'folder-pictures'),('Videos',(home/'Videos').as_uri(),'folder-videos'),('Trash','trash:/','user-trash'),('Network','remote:/','network-workgroup')]:
+        b=ET.SubElement(root,'bookmark',{'href':url});ET.SubElement(b,'title').text=label
+        info=ET.SubElement(b,'info');metadata=ET.SubElement(info,'metadata',{'owner':'http://freedesktop.org'});ET.SubElement(metadata,'{http://www.freedesktop.org/standards/desktop-bookmarks}icon',{'name':icon})
+project=next((b for b in root.findall('bookmark') if b.get('href','').rstrip('/')==(home/'Projects').as_uri()),None)
+if project is None:
+    project=ET.Element('bookmark',{'href':(home/'Projects').as_uri()});ET.SubElement(project,'title').text='Projects'
+    info=ET.SubElement(project,'info');metadata=ET.SubElement(info,'metadata',{'owner':'http://freedesktop.org'});ET.SubElement(metadata,'{http://www.freedesktop.org/standards/desktop-bookmarks}icon',{'name':'folder-development'})
+else:root.remove(project)
+home_entry=next((b for b in root.findall('bookmark') if b.get('href','').rstrip('/')==home.as_uri()),None)
+root.insert(list(root).index(home_entry)+1 if home_entry is not None else 0,project)
+with tempfile.NamedTemporaryFile(dir=places.parent,delete=False) as stream:
+    name=stream.name;tree.write(stream,encoding='utf-8',xml_declaration=True)
+os.replace(name,places)
+if os.environ.get('USER')=='live' and Path('/run/archiso').is_dir():
+    directory=subprocess.check_output(['xdg-user-dir','DESKTOP'],text=True).strip()
+    desktop=Path(directory);desktop.mkdir(parents=True,exist_ok=True)
+    launcher=desktop/'install-lollipop.desktop'
+    launcher.write_bytes(Path('/usr/share/applications/install-lollipop.desktop').read_bytes());launcher.chmod(0o755)
+
+# Lollipop shell integration: preserve the bash package-owned /etc/skel/.bashrc.
+bashrc=home/'.bashrc'
+line='[ -r /usr/share/lollipop/bashrc ] && . /usr/share/lollipop/bashrc'
+current=bashrc.read_text() if bashrc.exists() else ''
+if line not in current:
+    bashrc.write_text(current+'\n# Lollipop prompt\n'+line+'\n')

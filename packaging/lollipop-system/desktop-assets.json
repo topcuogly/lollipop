@@ -1,0 +1,50 @@
+{
+  "files": {
+    "usr/share/lollipop/logo-ascii.txt": "assets/logos/lollipop-ascii.txt",
+    "usr/share/icons/hicolor/512x512/apps/lollipop.png": "assets/logos/lollipop-icon.png",
+    "usr/share/icons/hicolor/512x512/apps/lollipop-launcher.png": "assets/logos/lollipop-icon-monochrome.png",
+    "usr/share/pixmaps/lollipop.png": "assets/logos/lollipop-icon.png"
+  },
+  "wallpapers": [
+    {
+      "id": "Lollipop",
+      "name": "Sugarline",
+      "source": "assets/wallpapers/neon-orb-over-violet-waves.png"
+    },
+    {
+      "id": "Lollipop-Sugarwave-original",
+      "name": "Sugarwave original",
+      "source": "assets/wallpapers/glowing-purple-lollipop-dreamscape.png"
+    },
+    {
+      "id": "Lollipop-Glass-Candy",
+      "name": "Glass Candy",
+      "source": "assets/wallpapers/cosmic-violet-glass-lollipop.png"
+    },
+    {
+      "id": "Lollipop-Hypnotic-low-stardust",
+      "name": "Hypnotic low stardust",
+      "source": "assets/wallpapers/luminous-violet-ribbon-vortex.png"
+    },
+    {
+      "id": "Lollipop-Dreamy-Purple-Street",
+      "name": "Dreamy Purple Street",
+      "source": "assets/wallpapers/mayuri-offers.png"
+    },
+    {
+      "id": "Lollipop-Quiet-Clubroom",
+      "name": "Quiet Clubroom",
+      "source": "assets/wallpapers/lick-lick-lick.png"
+    },
+    {
+      "id": "Lollipop-Girl",
+      "name": "Lollipop Girl",
+      "source": "assets/wallpapers/lollipop-girl.png"
+    },
+    {
+      "id": "Lollipop-Day",
+      "name": "Lollipopy Day",
+      "source": "assets/wallpapers/lollipopy-day.png"
+    }
+  ]
+}

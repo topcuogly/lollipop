@@ -31,3 +31,12 @@ Live-iso is configured and it works fine, do not go far beyond it for now.
 
 - [Architecture](docs/architecture.md)
 - [Package inventory](packages/README.md)
+- [Desktop defaults and artwork preparation](docs/desktop-defaults.md)
+
+## Packaging
+
+- [lollipop-system](packaging/lollipop-system/README.md) — Alpha 0.3 package recipe and payload preparation; staged import.
+
+## License
+
+Original Lollipop code and documentation are licensed under [GNU GPLv3](LICENSE) (`GPL-3.0-only`). Artwork and third-party components have separate terms; see [licensing scope](LICENSES.md).

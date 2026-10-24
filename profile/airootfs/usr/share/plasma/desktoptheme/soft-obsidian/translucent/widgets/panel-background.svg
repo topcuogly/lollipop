@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="700" viewBox="0 0 700 700">
+<path id="center" transform="translate(0,0)" d="M30 30h4v4h-4z" fill="#332D3B" opacity="0.65"/>
+<path id="top" transform="translate(0,0)" d="M30 0h4v30h-4z" fill="#332D3B" opacity="0.65"/>
+<path id="bottom" transform="translate(0,0)" d="M30 34h4v30h-4z" fill="#332D3B" opacity="0.65"/>
+<path id="left" transform="translate(0,0)" d="M0 30h30v4H0z" fill="#332D3B" opacity="0.65"/>
+<path id="right" transform="translate(0,0)" d="M34 30h30v4H34z" fill="#332D3B" opacity="0.65"/>
+<path id="topleft" transform="translate(0,0)" d="M30 0v30H0A30 30 0 0 1 30 0Z" fill="#332D3B" opacity="0.65"/>
+<path id="topright" transform="translate(0,0)" d="M34 0a30 30 0 0 1 30 30H34Z" fill="#332D3B" opacity="0.65"/>
+<path id="bottomleft" transform="translate(0,0)" d="M0 34h30v30A30 30 0 0 1 0 34Z" fill="#332D3B" opacity="0.65"/>
+<path id="bottomright" transform="translate(0,0)" d="M34 34h30a30 30 0 0 1-30 30Z" fill="#332D3B" opacity="0.65"/>
+<path id="mask-center" transform="translate(0,110)" d="M30 30h4v4h-4z" fill="#fff" opacity="1"/>
+<path id="mask-top" transform="translate(0,110)" d="M30 0h4v30h-4z" fill="#fff" opacity="1"/>
+<path id="mask-bottom" transform="translate(0,110)" d="M30 34h4v30h-4z" fill="#fff" opacity="1"/>
+<path id="mask-left" transform="translate(0,110)" d="M0 30h30v4H0z" fill="#fff" opacity="1"/>
+<path id="mask-right" transform="translate(0,110)" d="M34 30h30v4H34z" fill="#fff" opacity="1"/>
+<path id="mask-topleft" transform="translate(0,110)" d="M30 0v30H0A30 30 0 0 1 30 0Z" fill="#fff" opacity="1"/>
+<path id="mask-topright" transform="translate(0,110)" d="M34 0a30 30 0 0 1 30 30H34Z" fill="#fff" opacity="1"/>
+<path id="mask-bottomleft" transform="translate(0,110)" d="M0 34h30v30A30 30 0 0 1 0 34Z" fill="#fff" opacity="1"/>
+<path id="mask-bottomright" transform="translate(0,110)" d="M34 34h30a30 30 0 0 1-30 30Z" fill="#fff" opacity="1"/>
+<rect id="hint-top-margin" x="600" y="600" width="8" height="8" fill="none"/>
+<rect id="hint-bottom-margin" x="600" y="600" width="8" height="8" fill="none"/>
+<rect id="hint-left-margin" x="600" y="600" width="8" height="8" fill="none"/>
+<rect id="hint-right-margin" x="600" y="600" width="8" height="8" fill="none"/>
+<path id="north-center" transform="translate(110,0)" d="M14 14h4v4h-4z" fill="#332D3B" opacity="0.65"/>
+<path id="north-top" transform="translate(110,0)" d="M14 0h4v14h-4z" fill="#332D3B" opacity="0.65"/>
+<path id="north-bottom" transform="translate(110,0)" d="M14 18h4v14h-4z" fill="#332D3B" opacity="0.65"/>
+<path id="north-left" transform="translate(110,0)" d="M0 14h14v4H0z" fill="#332D3B" opacity="0.65"/>
+<path id="north-right" transform="translate(110,0)" d="M18 14h14v4H18z" fill="#332D3B" opacity="0.65"/>
+<path id="north-topleft" transform="translate(110,0)" d="M14 0v14H0A14 14 0 0 1 14 0Z" fill="#332D3B" opacity="0.65"/>
+<path id="north-topright" transform="translate(110,0)" d="M18 0a14 14 0 0 1 14 14H18Z" fill="#332D3B" opacity="0.65"/>
+<path id="north-bottomleft" transform="translate(110,0)" d="M0 18h14v14A14 14 0 0 1 0 18Z" fill="#332D3B" opacity="0.65"/>
+<path id="north-bottomright" transform="translate(110,0)" d="M18 18h14a14 14 0 0 1-14 14Z" fill="#332D3B" opacity="0.65"/>
+<path id="mask-north-center" transform="translate(110,110)" d="M14 14h4v4h-4z" fill="#fff" opacity="1"/>
+<path id="mask-north-top" transform="translate(110,110)" d="M14 0h4v14h-4z" fill="#fff" opacity="1"/>
+<path id="mask-north-bottom" transform="translate(110,110)" d="M14 18h4v14h-4z" fill="#fff" opacity="1"/>
+<path id="mask-north-left" transform="translate(110,110)" d="M0 14h14v4H0z" fill="#fff" opacity="1"/>
+<path id="mask-north-right" transform="translate(110,110)" d="M18 14h14v4H18z" fill="#fff" opacity="1"/>
+<path id="mask-north-topleft" transform="translate(110,110)" d="M14 0v14H0A14 14 0 0 1 14 0Z" fill="#fff" opacity="1"/>
+<path id="mask-north-topright" transform="translate(110,110)" d="M18 0a14 14 0 0 1 14 14H18Z" fill="#fff" opacity="1"/>
+<path id="mask-north-bottomleft" transform="translate(110,110)" d="M0 18h14v14A14 14 0 0 1 0 18Z" fill="#fff" opacity="1"/>
+<path id="mask-north-bottomright" transform="translate(110,110)" d="M18 18h14a14 14 0 0 1-14 14Z" fill="#fff" opacity="1"/>
+<rect id="north-hint-top-margin" x="600" y="600" width="8" height="8" fill="none"/>
+<rect id="north-hint-bottom-margin" x="600" y="600" width="8" height="8" fill="none"/>
+<rect id="north-hint-left-margin" x="600" y="600" width="8" height="8" fill="none"/>
+<rect id="north-hint-right-margin" x="600" y="600" width="8" height="8" fill="none"/>
+<path id="east-center" transform="translate(220,0)" d="M30 30h4v4h-4z" fill="#332D3B" opacity="0.65"/>
+<path id="east-top" transform="translate(220,0)" d="M30 0h4v30h-4z" fill="#332D3B" opacity="0.65"/>
+<path id="east-bottom" transform="translate(220,0)" d="M30 34h4v30h-4z" fill="#332D3B" opacity="0.65"/>
+<path id="east-left" transform="translate(220,0)" d="M0 30h30v4H0z" fill="#332D3B" opacity="0.65"/>
+<path id="east-right" transform="translate(220,0)" d="M34 30h30v4H34z" fill="#332D3B" opacity="0.65"/>
+<path id="east-topleft" transform="translate(220,0)" d="M30 0v30H0A30 30 0 0 1 30 0Z" fill="#332D3B" opacity="0.65"/>
+<path id="east-topright" transform="translate(220,0)" d="M34 0a30 30 0 0 1 30 30H34Z" fill="#332D3B" opacity="0.65"/>
+<path id="east-bottomleft" transform="translate(220,0)" d="M0 34h30v30A30 30 0 0 1 0 34Z" fill="#332D3B" opacity="0.65"/>
+<path id="east-bottomright" transform="translate(220,0)" d="M34 34h30a30 30 0 0 1-30 30Z" fill="#332D3B" opacity="0.65"/>
+<path id="mask-east-center" transform="translate(220,110)" d="M30 30h4v4h-4z" fill="#fff" opacity="1"/>
+<path id="mask-east-top" transform="translate(220,110)" d="M30 0h4v30h-4z" fill="#fff" opacity="1"/>
+<path id="mask-east-bottom" transform="translate(220,110)" d="M30 34h4v30h-4z" fill="#fff" opacity="1"/>
+<path id="mask-east-left" transform="translate(220,110)" d="M0 30h30v4H0z" fill="#fff" opacity="1"/>
+<path id="mask-east-right" transform="translate(220,110)" d="M34 30h30v4H34z" fill="#fff" opacity="1"/>
+<path id="mask-east-topleft" transform="translate(220,110)" d="M30 0v30H0A30 30 0 0 1 30 0Z" fill="#fff" opacity="1"/>
+<path id="mask-east-topright" transform="translate(220,110)" d="M34 0a30 30 0 0 1 30 30H34Z" fill="#fff" opacity="1"/>
+<path id="mask-east-bottomleft" transform="translate(220,110)" d="M0 34h30v30A30 30 0 0 1 0 34Z" fill="#fff" opacity="1"/>
+<path id="mask-east-bottomright" transform="translate(220,110)" d="M34 34h30a30 30 0 0 1-30 30Z" fill="#fff" opacity="1"/>
+<rect id="east-hint-top-margin" x="600" y="600" width="8" height="8" fill="none"/>
+<rect id="east-hint-bottom-margin" x="600" y="600" width="8" height="8" fill="none"/>
+<rect id="east-hint-left-margin" x="600" y="600" width="8" height="8" fill="none"/>
+<rect id="east-hint-right-margin" x="600" y="600" width="8" height="8" fill="none"/>
+<path id="south-center" transform="translate(330,0)" d="M14 14h4v4h-4z" fill="#332D3B" opacity="0.65"/>
+<path id="south-top" transform="translate(330,0)" d="M14 0h4v14h-4z" fill="#332D3B" opacity="0.65"/>
+<path id="south-bottom" transform="translate(330,0)" d="M14 18h4v14h-4z" fill="#332D3B" opacity="0.65"/>
+<path id="south-left" transform="translate(330,0)" d="M0 14h14v4H0z" fill="#332D3B" opacity="0.65"/>
+<path id="south-right" transform="translate(330,0)" d="M18 14h14v4H18z" fill="#332D3B" opacity="0.65"/>
+<path id="south-topleft" transform="translate(330,0)" d="M14 0v14H0A14 14 0 0 1 14 0Z" fill="#332D3B" opacity="0.65"/>
+<path id="south-topright" transform="translate(330,0)" d="M18 0a14 14 0 0 1 14 14H18Z" fill="#332D3B" opacity="0.65"/>
+<path id="south-bottomleft" transform="translate(330,0)" d="M0 18h14v14A14 14 0 0 1 0 18Z" fill="#332D3B" opacity="0.65"/>
+<path id="south-bottomright" transform="translate(330,0)" d="M18 18h14a14 14 0 0 1-14 14Z" fill="#332D3B" opacity="0.65"/>
+<path id="mask-south-center" transform="translate(330,110)" d="M14 14h4v4h-4z" fill="#fff" opacity="1"/>
+<path id="mask-south-top" transform="translate(330,110)" d="M14 0h4v14h-4z" fill="#fff" opacity="1"/>
+<path id="mask-south-bottom" transform="translate(330,110)" d="M14 18h4v14h-4z" fill="#fff" opacity="1"/>
+<path id="mask-south-left" transform="translate(330,110)" d="M0 14h14v4H0z" fill="#fff" opacity="1"/>
+<path id="mask-south-right" transform="translate(330,110)" d="M18 14h14v4H18z" fill="#fff" opacity="1"/>
+<path id="mask-south-topleft" transform="translate(330,110)" d="M14 0v14H0A14 14 0 0 1 14 0Z" fill="#fff" opacity="1"/>
+<path id="mask-south-topright" transform="translate(330,110)" d="M18 0a14 14 0 0 1 14 14H18Z" fill="#fff" opacity="1"/>
+<path id="mask-south-bottomleft" transform="translate(330,110)" d="M0 18h14v14A14 14 0 0 1 0 18Z" fill="#fff" opacity="1"/>
+<path id="mask-south-bottomright" transform="translate(330,110)" d="M18 18h14a14 14 0 0 1-14 14Z" fill="#fff" opacity="1"/>
+<rect id="south-hint-top-margin" x="600" y="600" width="8" height="8" fill="none"/>
+<rect id="south-hint-bottom-margin" x="600" y="600" width="8" height="8" fill="none"/>
+<rect id="south-hint-left-margin" x="600" y="600" width="8" height="8" fill="none"/>
+<rect id="south-hint-right-margin" x="600" y="600" width="8" height="8" fill="none"/>
+<path id="west-center" transform="translate(440,0)" d="M30 30h4v4h-4z" fill="#332D3B" opacity="0.65"/>
+<path id="west-top" transform="translate(440,0)" d="M30 0h4v30h-4z" fill="#332D3B" opacity="0.65"/>
+<path id="west-bottom" transform="translate(440,0)" d="M30 34h4v30h-4z" fill="#332D3B" opacity="0.65"/>
+<path id="west-left" transform="translate(440,0)" d="M0 30h30v4H0z" fill="#332D3B" opacity="0.65"/>
+<path id="west-right" transform="translate(440,0)" d="M34 30h30v4H34z" fill="#332D3B" opacity="0.65"/>
+<path id="west-topleft" transform="translate(440,0)" d="M30 0v30H0A30 30 0 0 1 30 0Z" fill="#332D3B" opacity="0.65"/>
+<path id="west-topright" transform="translate(440,0)" d="M34 0a30 30 0 0 1 30 30H34Z" fill="#332D3B" opacity="0.65"/>
+<path id="west-bottomleft" transform="translate(440,0)" d="M0 34h30v30A30 30 0 0 1 0 34Z" fill="#332D3B" opacity="0.65"/>
+<path id="west-bottomright" transform="translate(440,0)" d="M34 34h30a30 30 0 0 1-30 30Z" fill="#332D3B" opacity="0.65"/>
+<path id="mask-west-center" transform="translate(440,110)" d="M30 30h4v4h-4z" fill="#fff" opacity="1"/>
+<path id="mask-west-top" transform="translate(440,110)" d="M30 0h4v30h-4z" fill="#fff" opacity="1"/>
+<path id="mask-west-bottom" transform="translate(440,110)" d="M30 34h4v30h-4z" fill="#fff" opacity="1"/>
+<path id="mask-west-left" transform="translate(440,110)" d="M0 30h30v4H0z" fill="#fff" opacity="1"/>
+<path id="mask-west-right" transform="translate(440,110)" d="M34 30h30v4H34z" fill="#fff" opacity="1"/>
+<path id="mask-west-topleft" transform="translate(440,110)" d="M30 0v30H0A30 30 0 0 1 30 0Z" fill="#fff" opacity="1"/>
+<path id="mask-west-topright" transform="translate(440,110)" d="M34 0a30 30 0 0 1 30 30H34Z" fill="#fff" opacity="1"/>
+<path id="mask-west-bottomleft" transform="translate(440,110)" d="M0 34h30v30A30 30 0 0 1 0 34Z" fill="#fff" opacity="1"/>
+<path id="mask-west-bottomright" transform="translate(440,110)" d="M34 34h30a30 30 0 0 1-30 30Z" fill="#fff" opacity="1"/>
+<rect id="west-hint-top-margin" x="600" y="600" width="8" height="8" fill="none"/>
+<rect id="west-hint-bottom-margin" x="600" y="600" width="8" height="8" fill="none"/>
+<rect id="west-hint-left-margin" x="600" y="600" width="8" height="8" fill="none"/>
+<rect id="west-hint-right-margin" x="600" y="600" width="8" height="8" fill="none"/>
+</svg>

@@ -1,0 +1,3 @@
+[org.kde.konsole.desktop]
+_k_friendly_name=Konsole
+_launch=Meta+Return,Meta+Return,Konsole

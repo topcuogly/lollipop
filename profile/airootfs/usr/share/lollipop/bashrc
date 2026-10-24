@@ -1,0 +1,3 @@
+# Lollipop interactive Bash defaults.
+[[ $- != *i* ]] && return
+PS1='\[\e[38;2;190;164;232m\][\u@\h \W]\$ \[\e[0m\]'

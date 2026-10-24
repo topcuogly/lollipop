@@ -1,0 +1,9 @@
+NAME="Lollipop"
+PRETTY_NAME="Lollipop Alpha 0.3"
+ID=lollipop
+ID_LIKE=arch
+VERSION="Alpha 0.3"
+VERSION_ID="0.3"
+BUILD_ID="alpha-0.3"
+LOGO=lollipop
+ANSI_COLOR="38;2;190;164;232"

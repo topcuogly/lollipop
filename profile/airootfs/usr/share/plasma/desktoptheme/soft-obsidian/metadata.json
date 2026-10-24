@@ -1,0 +1,14 @@
+{
+  "KPlugin": {
+    "Id": "soft-obsidian",
+    "Name": "Soft Obsidian",
+    "Version": "0.3.0",
+    "License": "MIT",
+    "Authors": [
+      {
+        "Name": "Lollipop"
+      }
+    ]
+  },
+  "X-Plasma-API": "5.0"
+}

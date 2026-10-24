@@ -1,0 +1,33 @@
+{
+  "logo": {
+    "type": "file",
+    "source": "/usr/share/lollipop/logo-ascii.txt",
+    "color": {
+      "1": "#BEA4E8",
+      "2": "#EAE5F0"
+    },
+    "padding": {
+      "right": 3
+    }
+  },
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "host",
+    "kernel",
+    "uptime",
+    "packages",
+    "shell",
+    "display",
+    "de",
+    "wm",
+    "terminal",
+    "cpu",
+    "gpu",
+    "memory",
+    "disk",
+    "break",
+    "colors"
+  ]
+}
