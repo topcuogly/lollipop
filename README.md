@@ -26,3 +26,8 @@ Live-iso is configured and it works fine, do not go far beyond it for now.
 | Default terminal | Konsole |
 | Default shell | Bash |
 
+
+## Project documentation
+
+- [Architecture](docs/architecture.md)
+- [Package inventory](packages/README.md)
