@@ -1,3 +1,4 @@
+![Lollipop Alpha 0.3 desktop](assets/screenshots/ui.png)
 # Lollipop
 an Arch-based GNU/Linux distribution featuring KDE Plasma, for personal usage only.
 
