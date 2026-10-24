@@ -1,0 +1,72 @@
+#!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-3.0-only
+"""Offline Btrfs + boot/EFI checkpoint recovery from the Lollipop Live ISO."""
+import hashlib
+import argparse, json, os, shutil, stat, subprocess, tempfile, time
+from pathlib import Path
+p=argparse.ArgumentParser()
+p.add_argument('--root-device',required=True,help='Btrfs device; open LUKS first if used')
+p.add_argument('--boot-device',required=True)
+p.add_argument('--efi-device')
+p.add_argument('--snapshot',required=True,type=int)
+p.add_argument('--confirm',required=True,help='Exact ROOT_DEVICE:SNAPSHOT confirmation')
+a=p.parse_args()
+def run(*args): subprocess.run(args,check=True)
+if os.geteuid()!=0 or not Path('/run/archiso/bootmnt').exists():p.error('Run as root from the Live ISO')
+if a.snapshot<=0 or a.confirm!=f'{a.root_device}:{a.snapshot}':p.error('Confirmation does not match')
+for device in filter(None,[a.root_device,a.boot_device,a.efi_device]):
+ if not stat.S_ISBLK(os.stat(device).st_mode):p.error('Not a block device: '+device)
+ if subprocess.run(['findmnt','-rn','-S',device],stdout=subprocess.DEVNULL).returncode==0:p.error('Device is already mounted: '+device)
+with tempfile.TemporaryDirectory(prefix='lollipop-recovery-') as name:
+ top=Path(name)/'top';top.mkdir();mounted=[]
+ try:
+  run('mount','-o','subvolid=5',a.root_device,str(top));mounted.append(top)
+  snap=top/'@snapshots'/str(a.snapshot)/'snapshot'
+  saved=top/'@snapshots/lollipop'/str(a.snapshot)
+  history=json.loads((top/'@snapshots/lollipop/transactions.json').read_text())
+  if not any(a.snapshot in [x.get('pre'),x.get('post')] for x in history):p.error('Not an owned Lollipop checkpoint')
+  if not snap.is_dir() or not (saved/'boot.tar').is_file() or not (top/'@').is_dir():p.error('Incomplete checkpoint/layout')
+  if (saved/'efi.tar').exists() and not a.efi_device:p.error('Checkpoint requires --efi-device')
+  metadata=json.loads((saved/'checkpoint.json').read_text())
+  for device,key in [(a.root_device,'root_uuid'),(a.boot_device,'boot_uuid'),(a.efi_device,'efi_uuid')]:
+   if metadata.get(key):
+    actual=subprocess.check_output(['blkid','-s','UUID','-o','value',device],text=True).strip()
+    if actual!=metadata[key]:p.error('Device UUID does not match checkpoint: '+key)
+  for file,digest in metadata['sha256'].items():
+   if file not in {'boot.tar','efi.tar'} or hashlib.sha256((saved/file).read_bytes()).hexdigest()!=digest:p.error('Checkpoint archive checksum mismatch')
+  # Validate archive inventories before touching the boot partition.
+  import tarfile
+  for archive in ['boot.tar','efi.tar']:
+   file=saved/archive
+   if not file.exists():continue
+   with tarfile.open(file) as tar:
+    for m in tar:
+     if Path(m.name).is_absolute() or '..' in Path(m.name).parts:p.error('Invalid checkpoint archive')
+  new=top/('@restore-'+str(a.snapshot))
+  if new.exists():p.error('Previous restore staging volume exists')
+  run('btrfs','subvolume','snapshot',str(snap),str(new))
+  old=top/('@before-restore-'+str(time.time_ns()))
+  (top/'@').rename(old);new.rename(top/'@')
+  root=Path(name)/'root';root.mkdir()
+  run('mount','-o','subvol=@',a.root_device,str(root));mounted.append(root)
+  (root/'boot').mkdir(exist_ok=True)
+  run('mount',a.boot_device,str(root/'boot'));mounted.append(root/'boot')
+  if a.efi_device:
+   (root/'boot/efi').mkdir(exist_ok=True)
+   run('mount',a.efi_device,str(root/'boot/efi'));mounted.append(root/'boot/efi')
+  # Exactly the selected boot/ESP filesystems are restored. @home remains untouched.
+  for directory in (root/'boot').iterdir():
+   if directory.name=='efi':continue
+   if directory.is_dir() and not directory.is_symlink():shutil.rmtree(directory)
+   else:directory.unlink()
+  run('tar','-xpf',str(saved/'boot.tar'),'-C',str(root/'boot'))
+  if (saved/'efi.tar').exists():
+   for entry in (root/'boot/efi').iterdir():
+    if entry.is_dir() and not entry.is_symlink():shutil.rmtree(entry)
+    else:entry.unlink()
+   run('tar','-xpf',str(saved/'efi.tar'),'-C',str(root/'boot/efi'))
+  run('sync')
+  print('Root, kernel/initramfs, GRUB files and saved ESP restored together.')
+  print('Previous root retained as',old.name,'; reboot after unmounting.')
+ finally:
+  for mount in reversed(mounted):run('umount',str(mount))

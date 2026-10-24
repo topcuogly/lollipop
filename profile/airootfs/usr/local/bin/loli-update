@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-only
+set -euo pipefail
+if [[ $# == 0 ]]; then
+ if ! python3 -c 'import json,sys; sys.exit(0 if json.load(open("/etc/lollipop/update-channel.json")).get("manifest_url") else 1)'; then
+  exec sudo /usr/local/sbin/lollipop-update check
+ fi
+ sudo /usr/local/sbin/lollipop-update check
+ if [[ -f /var/lib/lollipop-update/available.json && -f /var/lib/lollipop-update/available.json.sig ]]; then
+  exec sudo /usr/local/sbin/lollipop-update apply /var/lib/lollipop-update/available.json /var/lib/lollipop-update/available.json.sig
+ fi
+ exit 0
+fi
+# Explicit local signed-manifest workflow: loli-update MANIFEST SIGNATURE [--allow-no-snapshot]
+exec sudo /usr/local/sbin/lollipop-update apply "$@"

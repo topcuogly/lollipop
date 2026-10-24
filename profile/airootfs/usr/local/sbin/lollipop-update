@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-3.0-only
+import argparse, sys
+sys.path.insert(0,'/usr/lib/lollipop')
+import updates
+p=argparse.ArgumentParser(description='Lollipop signed full-snapshot updates')
+s=p.add_subparsers(dest='action',required=True)
+s.add_parser('check')
+a=s.add_parser('apply');a.add_argument('manifest');a.add_argument('signature');a.add_argument('--allow-no-snapshot',action='store_true')
+a=p.parse_args()
+try:
+ if a.action=='check': updates.fetch()
+ else: updates.apply(a.manifest,a.signature,a.allow_no_snapshot)
+except Exception as exc:
+ print('Lollipop:',exc,file=sys.stderr);sys.exit(1)

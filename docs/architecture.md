@@ -32,4 +32,4 @@ The Btrfs update path includes pre/post snapshots and backups of `/boot` and the
 
 Installation and subsequent boot have succeeded in user testing. Panel transparency, battery percentage layout, and launching the installer from the desktop have required further fixes and runtime verification. Alpha 0.3 remains experimental.
 
-The full build scripts, package recipes, installer configuration, and update implementation have not yet been imported into this repository. This document records the existing design; it does not make this checkout a complete ISO build tree.
+The `lollipop-system` recipe, payload preparation, identity files, and desktop defaults have been imported. Artwork staging uses the existing `assets/` directory. Package command wrappers, the update/recovery implementation, and update check units have also been imported. The remaining build scripts, package recipes, other service/application payload, and installer configuration have not yet been imported into this repository. This document records the existing design; it does not make this checkout a complete ISO build tree.

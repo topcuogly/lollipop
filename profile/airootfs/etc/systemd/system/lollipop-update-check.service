@@ -1,0 +1,8 @@
+[Unit]
+Description=Check signed Lollipop release announcements
+Wants=network-online.target
+After=network-online.target
+ConditionPathExists=!/run/archiso/bootmnt
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/lollipop-update check

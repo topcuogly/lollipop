@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-only
+set -euo pipefail
+[[ $(findmnt -n -o FSTYPE /) == btrfs ]] || exit 0
+[[ -d /.snapshots ]] || { echo 'Missing snapshot mount' >&2; exit 1; }
+# Calamares created a separate @snapshots volume. snapper create-config would
+# attempt to create it again, so initialize the documented configuration directly.
+install -d -m 750 /etc/snapper/configs
+cp /usr/share/snapper/config-templates/default /etc/snapper/configs/root
+sed -i 's|^SUBVOLUME=.*|SUBVOLUME="/"|;s|^FSTYPE=.*|FSTYPE="btrfs"|;s|^TIMELINE_CREATE=.*|TIMELINE_CREATE="no"|;s|^TIMELINE_CLEANUP=.*|TIMELINE_CLEANUP="no"|;s|^NUMBER_CLEANUP=.*|NUMBER_CLEANUP="no"|' /etc/snapper/configs/root
+printf 'SNAPPER_CONFIGS="root"\n' > /etc/conf.d/snapper
+install -d -m 700 /.snapshots/lollipop

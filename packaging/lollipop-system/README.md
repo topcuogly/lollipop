@@ -12,7 +12,7 @@ The live-only passwordless sudo policy is not included in this package. The pack
 
 This is a staged import, not yet a standalone buildable package. Required inputs have not all been imported into this repository:
 
-- The remaining service, application, update/recovery, and policy files under `profile/airootfs/`. Desktop and identity files are already imported; see [desktop defaults](../../docs/desktop-defaults.md).
+- The remaining virtualization service, browser/application, and administration policy files under `profile/airootfs/`. Desktop, identity, package wrappers, and update/recovery files are already imported; see [desktop defaults](../../docs/desktop-defaults.md).
 - `state/tor-browser.tar.xz`, downloaded and verified by the original build's `prepare-tor.py` using its version lock and upstream signature.
 - The original build orchestration and signing configuration.
 

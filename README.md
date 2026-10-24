@@ -32,6 +32,7 @@ Live-iso is configured and it works fine, do not go far beyond it for now.
 - [Architecture](docs/architecture.md)
 - [Package inventory](packages/README.md)
 - [Desktop defaults and artwork preparation](docs/desktop-defaults.md)
+- [Package commands, updates, and recovery](docs/updates.md)
 
 ## Packaging
 
