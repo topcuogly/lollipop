@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+set -euo pipefail
+[[ $EUID == 0 && -f /run/lollipop-installer-target && ! -e /run/archiso/bootmnt/lollipop/x86_64/airootfs.sfs ]] || { echo 'This helper runs inside the installer target only.' >&2; exit 1; }
+case "${1:-}" in
+ clean)
+  mountpoint -q /boot || { echo 'A separate ext4 /boot is required for coherent LUKS2/GRUB recovery.' >&2; exit 1; }
+  [[ $(findmnt -n -o FSTYPE /boot) == ext4 ]] || { echo '/boot must be ext4.' >&2; exit 1; }
+  rm -f /etc/sudoers.d/10-live /etc/sudoers.d/90-lollipop-live /etc/sddm.conf.d/10-live.conf /etc/mkinitcpio.conf.d/archiso.conf
+  rm -f /etc/systemd/system/sddm.service.d/live.conf /etc/systemd/system/multi-user.target.wants/pacman-init.service
+  rm -f /etc/systemd/system/pacman-init.service /etc/systemd/system/etc-pacman.d-gnupg.mount
+  rm -f /etc/systemd/system/multi-user.target.wants/qemu-guest-agent.service
+  rm -f /etc/systemd/system/systemd-firstboot.service
+  rm -f /usr/local/bin/lollipop-installer-preflight /usr/local/bin/lollipop-live-setup /etc/systemd/system/lollipop-live-setup.service /usr/local/bin/install-lollipop
+  rm -f /etc/skel/Desktop/install-lollipop.desktop /usr/share/applications/install-lollipop.desktop
+  if id live &>/dev/null; then userdel -r live; fi
+  pacman -R --noconfirm calamares mkinitcpio-archiso
+  # Archiso strips /boot from its squashfs; restore the packaged kernel explicitly.
+  kernel_found=false
+  for module in /usr/lib/modules/*; do
+   if [[ -f "$module/pkgbase" && $(cat "$module/pkgbase") == linux-lts && -f "$module/vmlinuz" ]]; then
+    install -m 644 "$module/vmlinuz" /boot/vmlinuz-linux-lts
+    kernel_found=true
+   fi
+  done
+  "$kernel_found" || { echo 'LTS kernel payload missing' >&2; exit 1; }
+  # The Live initramfs preset is removed before generating an installed initramfs.
+  rm -f /etc/mkinitcpio.d/linux-lts.preset
+  printf "ALL_config=\"/etc/mkinitcpio.conf\"\nPRESETS=('default')\ndefault_image=\"/boot/initramfs-linux-lts.img\"\nALL_kver=\"/boot/vmlinuz-linux-lts\"\n" > /etc/mkinitcpio.d/linux-lts.preset
+  ;;
+ finish)
+  /usr/local/sbin/lollipop-branding
+  systemctl enable NetworkManager sddm lollipop-update-check.timer
+  systemctl disable lollipop-flathub.timer || true
+  # Package keys are initialized on the installed filesystem, not the Live tmpfs.
+  pacman-key --init
+  pacman-key --populate archlinux
+  pacman-key --add /etc/lollipop/release-keyring.gpg
+  release_fpr=$(gpg --show-keys --with-colons /etc/lollipop/release-keyring.gpg | awk -F: '$1=="fpr" {print $10;exit}')
+  pacman-key --lsign-key "$release_fpr"
+  passwd -l root
+  /usr/local/sbin/lollipop-snapshot-setup
+  mkdir -p /etc/skel/Applications /etc/skel/Trashfiles
+  rm -f /run/lollipop-installer-target
+  ;;
+ *) exit 2 ;;
+esac

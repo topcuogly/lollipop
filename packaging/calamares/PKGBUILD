@@ -1,0 +1,19 @@
+# SPDX-License-Identifier: GPL-3.0-only
+pkgname=calamares
+pkgver=3.4.2
+pkgrel=2
+pkgdesc="Lollipop graphical installer"
+arch=('x86_64')
+url='https://codeberg.org/Calamares/calamares'
+license=('GPL-3.0-or-later')
+options=('!debug')
+depends=('kcoreaddons' 'kpmcore' 'libpwquality' 'qt6-declarative' 'qt6-svg' 'yaml-cpp' 'python' 'polkit-qt6')
+makedepends=('cmake' 'extra-cmake-modules' 'ninja' 'qt6-tools' 'qt6-translations' 'libglvnd')
+source=('calamares-3.4.2.tar' 'clear-failure-message.patch')
+sha256sums=('cffdf8770f17a4de7169a68f9a1e3beed34c7d552e95ff585850856cf9bd9a5f' '0feeb570a438cf4bac9ab80b5c3e2b8d2547ed67e6f284693915ac3b214da73f')
+prepare() { cd calamares-3.4.2; patch -Np1 -i "$srcdir/clear-failure-message.patch"; }
+build() {
+ cmake -S calamares-3.4.2 -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=lib -DWITH_QT6=ON -DINSTALL_CONFIG=OFF -DBUILD_TESTING=OFF -DSKIP_MODULES="dracut dracutlukscfg dummycpp dummyprocess dummypython dummypythonqt initramfs initramfscfg interactiveterminal packagechooser packagechooserq services-openrc"
+ cmake --build build --parallel "${LOLLIPOP_JOBS:-4}"
+}
+package() { DESTDIR="$pkgdir" cmake --install build; }

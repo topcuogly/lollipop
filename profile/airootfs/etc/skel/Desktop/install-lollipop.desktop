@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Install Lollipop
+Name[tr]=Lollipop Kur
+Exec=/usr/local/bin/install-lollipop
+Icon=lollipop
+Terminal=false
+Categories=System;

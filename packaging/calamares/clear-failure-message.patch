@@ -1,0 +1,11 @@
+--- a/src/modules/finished/FinishedPage.cpp
++++ b/src/modules/finished/FinishedPage.cpp
+@@ -118,7 +118,7 @@
+         else
+         {
+             ui->mainText->setText( tr( "<h1>Installation Failed</h1><br/>"
+-                                       "%1 has not been installed on your computer.<br/>"
++                                       "The installation of %1 did not complete.<br/>"
+                                        "The error message was: %2.",
+                                        "@info, %1 is product name with version" )
+                                        .arg( branding->versionedName() )

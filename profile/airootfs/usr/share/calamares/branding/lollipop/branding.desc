@@ -1,0 +1,26 @@
+componentName: lollipop
+welcomeStyleCalamares: false
+welcomeExpandingLogo: true
+windowSize: 1000px,700px
+windowPlacement: center
+strings:
+  productName: Lollipop
+  shortProductName: Lollipop
+  version: Alpha 0.3
+  shortVersion: '0.3'
+  versionedName: Lollipop Alpha 0.3
+  shortVersionedName: Lollipop 0.3
+  bootloaderEntryName: Lollipop
+images:
+  productIcon: logo.png
+  productLogo: logo.png
+  productWelcome: logo.png
+style:
+  SidebarBackground: '#17151D'
+  SidebarText: '#EAE5F0'
+  SidebarBackgroundCurrent: '#BEA4E8'
+  SidebarTextCurrent: '#17151D'
+slideshow: show.qml
+slideshowAPI: 2
+uploadServer:
+  type: none

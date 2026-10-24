@@ -11,5 +11,11 @@
     "sha256": "18b35135d2fe894e63cb1a0035e4ddd9b126179da8236193a80bafcf39ae3703",
     "frame_radius": 4.5,
     "plugin_id": "org.kde.lollipop"
+  },
+  "calamares": {
+    "version": "3.4.2",
+    "source": "https://codeberg.org/Calamares/calamares.git",
+    "commit": "36d30c492e5c7b5d6d32fed5c5d9790522e1eea3",
+    "sha256": "cffdf8770f17a4de7169a68f9a1e3beed34c7d552e95ff585850856cf9bd9a5f"
   }
 }

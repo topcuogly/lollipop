@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+log="${XDG_CACHE_HOME:-$HOME/.cache}/lollipop-installer-launch.log"
+mkdir -p "$(dirname "$log")"
+if ! /usr/local/bin/lollipop-installer-preflight >"$log" 2>&1; then
+ kdialog --title 'Install Lollipop' --error "$(cat "$log")"
+ exit 1
+fi
+if sudo -n --preserve-env=DISPLAY,XAUTHORITY env QT_QPA_PLATFORM=xcb /usr/bin/calamares >>"$log" 2>&1; then
+ exit 0
+else
+ kdialog --title 'Install Lollipop' --error "Installer could not start or exited with an error. Log: $log
+$(tail -n 12 "$log")"
+ exit 1
+fi

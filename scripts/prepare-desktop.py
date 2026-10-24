@@ -36,6 +36,10 @@ def prepare(output):
     for dest, source in manifest['files'].items():
         path = target(dest); path.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(asset(source), path)
+    # Calamares branding uses the same main logo; no second artwork copy is tracked.
+    branding = output / 'usr/share/calamares/branding/lollipop'
+    if branding.is_dir():
+        shutil.copyfile(asset('assets/logos/lollipop-icon.png'), branding / 'logo.png')
     for wallpaper in manifest['wallpapers']:
         directory = output / 'usr/share/wallpapers' / wallpaper['id']
         images = directory / 'contents/images'; images.mkdir(parents=True, exist_ok=True)

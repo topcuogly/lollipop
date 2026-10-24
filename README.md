@@ -33,12 +33,15 @@ Live-iso is configured and it works fine, do not go far beyond it for now.
 - [Package inventory](packages/README.md)
 - [Desktop defaults and artwork preparation](docs/desktop-defaults.md)
 - [Package commands, updates, and recovery](docs/updates.md)
+- [Installer integration](docs/installer.md)
 
 ## Packaging
 
 - [lollipop-system](packaging/lollipop-system/README.md) — Alpha 0.3 package recipe, complete payload preparation, and standalone build instructions.
 
 - [lollipop-decoration](packaging/lollipop-decoration/README.md) — rounded KWin window decoration derived from Breeze 6.8.1.
+
+- [Calamares](packaging/calamares/README.md) — pinned Qt 6 installer and Lollipop integration.
 
 ## License
 

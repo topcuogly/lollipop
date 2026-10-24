@@ -1,0 +1,4 @@
+type: job
+name: lollipop-verify
+interface: python
+script: main.py

@@ -1,0 +1,4 @@
+type: job
+name: lollipop-clean
+interface: python
+script: main.py

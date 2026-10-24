@@ -1,0 +1,4 @@
+type: job
+name: lollipop-finish
+interface: python
+script: main.py

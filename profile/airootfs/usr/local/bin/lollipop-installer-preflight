@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+if [[ $EUID != 0 ]]; then exec sudo -n "$0"; fi
+source_image=''
+for candidate in /run/archiso/copytoram/airootfs.sfs /run/archiso/bootmnt/lollipop/x86_64/airootfs.sfs; do
+ if [[ -r "$candidate" ]]; then source_image=$candidate; break; fi
+done
+[[ -n "$source_image" ]] || { echo 'Lollipop installation source missing. Restart the Live USB.' >&2; exit 1; }
+command -v unsquashfs >/dev/null
+unsquashfs -s "$source_image" >/dev/null
+printf 'unpack:\n- source: %s\n  sourcefs: squashfs\n  destination: ""\n' "$source_image" > /etc/calamares/modules/unpackfs.conf
