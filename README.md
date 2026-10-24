@@ -1,5 +1,5 @@
 ![Lollipop Alpha 0.3 desktop](assets/screenshots/ui.png)
-# Lollipop
+# Lollipop (Repo under construction)
 an Arch-based GNU/Linux distribution featuring KDE Plasma, for personal usage only.
 
 ## Status
