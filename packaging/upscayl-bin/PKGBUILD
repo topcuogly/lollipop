@@ -1,0 +1,24 @@
+# SPDX-License-Identifier: GPL-3.0-only
+pkgname=upscayl-bin
+pkgver=2.15.0
+pkgrel=1
+pkgdesc='Upscayl native GPU image upscaler (official upstream Linux binary)'
+arch=('x86_64')
+url='https://github.com/upscayl/upscayl'
+license=('AGPL-3.0-only')
+depends=('alsa-lib' 'gtk3' 'nss' 'libxss' 'libxtst' 'mesa' 'xdg-utils' 'at-spi2-core')
+provides=('upscayl=2.15.0')
+conflicts=('upscayl' 'upscayl-appimage')
+source=('https://github.com/upscayl/upscayl/releases/download/v2.15.0/upscayl-2.15.0-linux.deb')
+sha512sums=('18b6695587413bc7a7626eba2f47335b4ffd3e8055751b74f533a4e6fd6ee2d0ad20ea0ae5199947bc4bb9a41d7f2d1050f8dc5f996809e0cb4f626d1522de50')
+noextract=('upscayl-2.15.0-linux.deb')
+options=('!strip')
+package() {
+ mkdir -p "$srcdir/deb" "$srcdir/payload"
+ bsdtar -xf "$srcdir/upscayl-2.15.0-linux.deb" -C "$srcdir/deb"
+ bsdtar -xf "$srcdir/deb/data.tar.xz" -C "$srcdir/payload"
+ cp -a "$srcdir/payload/opt" "$srcdir/payload/usr" "$pkgdir/"
+ install -d "$pkgdir/usr/bin"
+ ln -sf /opt/Upscayl/upscayl "$pkgdir/usr/bin/upscayl"
+ if [[ -f "$pkgdir/opt/Upscayl/chrome-sandbox" ]]; then chmod 4755 "$pkgdir/opt/Upscayl/chrome-sandbox"; fi
+}

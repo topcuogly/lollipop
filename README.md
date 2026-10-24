@@ -44,6 +44,9 @@ Live-iso is configured and it works fine, do not go far beyond it for now.
 
 - [Calamares](packaging/calamares/README.md) — pinned Qt 6 installer and Lollipop integration.
 
+- [PhotoCraft](packaging/photocraft-bin/README.md) — pinned native photo editor package.
+- [Upscayl](packaging/upscayl-bin/README.md) — pinned native image upscaler package.
+
 ## License
 
 Original Lollipop code and documentation are licensed under [GNU GPLv3](LICENSE) (`GPL-3.0-only`). Artwork and third-party components have separate terms; see [licensing scope](LICENSES.md).

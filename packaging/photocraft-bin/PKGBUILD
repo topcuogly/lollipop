@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: GPL-3.0-only
+pkgname=photocraft-bin
+pkgver=0.14.0
+pkgrel=1
+pkgdesc='PhotoCraft native photo editor (official ArtCraft binary)'
+arch=('x86_64')
+url='https://github.com/storytold/photocraft'
+license=('MIT' 'Apache-2.0')
+depends=('glibc' 'libgcc' 'libstdc++' 'hicolor-icon-theme' 'libxkbcommon' 'vulkan-icd-loader')
+provides=('photocraft=0.14.0')
+conflicts=('photocraft' 'photocraft-git' 'ai.storyteller.photocraft')
+source=('https://github.com/storytold/photocraft/releases/download/v0.14.0/photocraft-0.14.0-linux-x86_64.pkg.tar.zst')
+sha256sums=('f23ba1f4142834e2ceb75fe0dc4491726f41e9184e7c7081e986d6a243b10af2')
+noextract=('photocraft-0.14.0-linux-x86_64.pkg.tar.zst')
+options=('!strip')
+package() {
+ mkdir -p "$srcdir/payload"
+ bsdtar -xf "$srcdir/photocraft-0.14.0-linux-x86_64.pkg.tar.zst" -C "$srcdir/payload" usr
+ cp -a "$srcdir/payload/usr" "$pkgdir/"
+}

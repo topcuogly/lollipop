@@ -17,5 +17,15 @@
     "source": "https://codeberg.org/Calamares/calamares.git",
     "commit": "36d30c492e5c7b5d6d32fed5c5d9790522e1eea3",
     "sha256": "cffdf8770f17a4de7169a68f9a1e3beed34c7d552e95ff585850856cf9bd9a5f"
+  },
+  "photocraft-bin": {
+    "version": "0.14.0",
+    "url": "https://github.com/storytold/photocraft/releases/download/v0.14.0/photocraft-0.14.0-linux-x86_64.pkg.tar.zst",
+    "sha256": "f23ba1f4142834e2ceb75fe0dc4491726f41e9184e7c7081e986d6a243b10af2"
+  },
+  "upscayl-bin": {
+    "version": "2.15.0",
+    "url": "https://github.com/upscayl/upscayl/releases/download/v2.15.0/upscayl-2.15.0-linux.deb",
+    "sha512": "18b6695587413bc7a7626eba2f47335b4ffd3e8055751b74f533a4e6fd6ee2d0ad20ea0ae5199947bc4bb9a41d7f2d1050f8dc5f996809e0cb4f626d1522de50"
   }
 }
