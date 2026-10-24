@@ -1,0 +1,8 @@
+{
+  "tor-browser": {
+    "version": "15.0.26",
+    "url": "https://dist.torproject.org/torbrowser/15.0.26/tor-browser-linux-x86_64-15.0.26.tar.xz",
+    "sha256": "327ac7443724b9eb6d3697506391b110ee159739bdc14bd731caa6fc16ffbf74",
+    "signing_fingerprint": "EF6E286DDA85EA2A4BA7DE684E2C6E8793298290"
+  }
+}

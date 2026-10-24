@@ -1,0 +1,12 @@
+[Unit]
+Description=Lollipop virtual machine default NAT network
+After=libvirtd.service
+Requires=libvirtd.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "virsh -c qemu:///system net-info default >/dev/null 2>&1 || virsh -c qemu:///system net-define /usr/share/libvirt/networks/default.xml; virsh -c qemu:///system net-autostart default; virsh -c qemu:///system net-list --name | grep -Fxq default || virsh -c qemu:///system net-start default"
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

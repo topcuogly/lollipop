@@ -4,6 +4,8 @@ from pathlib import Path
 import tarfile,json,hashlib,os,tempfile,subprocess
 root=Path(__file__).resolve().parents[1]
 (root/'state').mkdir(exist_ok=True)
+# Verify the cached browser too; a stale or modified archive must never enter the package.
+subprocess.run(['python3',str(root/'scripts/prepare-tor.py')],check=True)
 workspace=tempfile.TemporaryDirectory(prefix='system-payload-',dir=root/'state')
 fs=Path(workspace.name)/'airootfs'
 subprocess.run(['python3',str(root/'scripts/prepare-desktop.py'),'--output',str(fs)],check=True)

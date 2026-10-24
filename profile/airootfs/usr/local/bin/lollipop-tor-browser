@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -euo pipefail
+[[ $EUID != 0 ]] || { echo 'Run Tor Browser as your desktop user.' >&2; exit 1; }
+base="${XDG_DATA_HOME:-$HOME/.local/share}/lollipop-tor"
+mkdir -p "$base"
+exec 9>"$base/.install.lock"
+flock 9
+if [[ ! -x "$base/tor-browser/Browser/start-tor-browser" ]]; then
+ temporary=$(mktemp -d "$base/.extract.XXXXXX")
+ trap 'rm -rf -- "$temporary"' EXIT
+ tar -xJf /usr/share/lollipop/tor-browser.tar.xz -C "$temporary"
+ [[ -x "$temporary/tor-browser/Browser/start-tor-browser" ]]
+ mv "$temporary/tor-browser" "$base/tor-browser"
+ rmdir "$temporary"
+ trap - EXIT
+fi
+flock -u 9
+exec 9>&-
+exec "$base/tor-browser/Browser/start-tor-browser" --detach "$@"

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Tor Browser
+Comment=Tor Browser with a preinstalled official browser payload
+Exec=lollipop-tor-browser %u
+Icon=torbrowser-launcher
+Terminal=false
+Categories=Network;WebBrowser;
+StartupNotify=true
+MimeType=x-scheme-handler/http;x-scheme-handler/https;

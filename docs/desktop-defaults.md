@@ -24,7 +24,7 @@ The output directory must not exist. This command only stages files; it does not
 
 The old Alpha 0.3 wallpaper entry `Lollipop-Hypnotic-original` has no exact image match in the current assets and is not recreated. The default Sugarline wallpaper remains mapped to `neon-orb-over-violet-waves.png`; the two additional repository wallpapers receive their own KDE entries.
 
-`make-system-payload.py` now stages these generated files before assembling the package. It still requires the remaining profile inputs and the verified Tor Browser archive, so the full package cannot be built from this partial import yet.
+`make-system-payload.py` now stages these generated files before assembling the package. The remaining package inputs and browser verification step are now imported, so the package can be built separately; see the [package instructions](../packaging/lollipop-system/README.md).
 
 ## Runtime limitations
 

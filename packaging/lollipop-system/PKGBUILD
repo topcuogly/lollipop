@@ -3,9 +3,12 @@ pkgname=lollipop-system
 pkgver=0.3
 pkgrel=1
 pkgdesc='Lollipop identity, desktop defaults and signed update/recovery tools'
-arch=('any')
+arch=('x86_64')
 license=('GPL-3.0-only' 'MIT' 'MPL-2.0' 'BSD-3-Clause' 'LicenseRef-UserProvided')
-depends=('python' 'gnupg' 'snapper' 'btrfs-progs' 'fastfetch')
+depends=('bash' 'python' 'gnupg' 'snapper' 'btrfs-progs' 'fastfetch'
+         'coreutils' 'util-linux' 'tar' 'xz' 'sudo' 'pacman' 'flatpak' 'xdg-utils'
+         'xdg-user-dirs' 'libvirt' 'dnsmasq' 'nftables' 'zram-generator'
+         'grub' 'mkinitcpio' 'torbrowser-launcher' 'plasma-workspace' 'konsole' 'qt6-tools')
 source=('lollipop-system.tar')
 # Source digest is written by scripts/make-system-payload.py before makepkg.
 sha256sums=('SOURCE_DIGEST')

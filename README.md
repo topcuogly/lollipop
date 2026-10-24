@@ -36,7 +36,7 @@ Live-iso is configured and it works fine, do not go far beyond it for now.
 
 ## Packaging
 
-- [lollipop-system](packaging/lollipop-system/README.md) — Alpha 0.3 package recipe and payload preparation; staged import.
+- [lollipop-system](packaging/lollipop-system/README.md) — Alpha 0.3 package recipe, complete payload preparation, and standalone build instructions.
 
 ## License
 
