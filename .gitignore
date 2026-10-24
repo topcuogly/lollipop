@@ -1,0 +1,61 @@
+# Generated build state, local repositories and caches.
+/state/
+/out/
+/work/
+/build/
+/dist/
+/artifacts/
+/.cache/
+
+# ISO and VM images and binary package outputs.
+*.iso
+*.img
+*.qcow
+*.qcow2
+*.vdi
+*.vmdk
+*.pkg.tar.*
+*.deb
+*.rpm
+
+# Generated source bundles and downloaded upstream archives.
+*.tar
+*.tar.gz
+*.tar.xz
+*.tar.zst
+*.tgz
+*.zip
+
+# Private signing material. (Public verification keys may be tracked deliberately?.
+**/private-keys-v1.d/
+**/openpgp-revocs.d/
+secring.gpg
+*private*.key
+*private*.asc
+*secret*.key
+*secret*.asc
+id_rsa
+id_ed25519
+
+# keep a sanitized example trackable.
+.env
+.env.*
+!.env.example
+
+# Python and editor-generated files.
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Runtime/debug logs; curated test evidence can be explicitly added later.
+*.log
