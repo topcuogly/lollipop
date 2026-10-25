@@ -12,7 +12,7 @@ conflicts=('upscayl' 'upscayl-appimage')
 source=('https://github.com/upscayl/upscayl/releases/download/v2.15.0/upscayl-2.15.0-linux.deb')
 sha512sums=('18b6695587413bc7a7626eba2f47335b4ffd3e8055751b74f533a4e6fd6ee2d0ad20ea0ae5199947bc4bb9a41d7f2d1050f8dc5f996809e0cb4f626d1522de50')
 noextract=('upscayl-2.15.0-linux.deb')
-options=('!strip')
+options=('!strip' '!debug')
 package() {
  mkdir -p "$srcdir/deb" "$srcdir/payload"
  bsdtar -xf "$srcdir/upscayl-2.15.0-linux.deb" -C "$srcdir/deb"

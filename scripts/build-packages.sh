@@ -16,7 +16,11 @@ done
 packages=()
 for name in calamares lollipop-system lollipop-decoration photocraft-bin upscayl-bin; do
  directory="$ROOT/state/$name"
- (cd "$directory"; makepkg --noconfirm --cleanbuild --force)
+ # lollipop-system only copies a verified payload; its desktop runtime dependencies
+ # belong in the ISO target, not on the headless builder. Other recipes check normally.
+ flags=(--noconfirm --cleanbuild --force)
+ [[ "$name" != lollipop-system ]] || flags+=(--nodeps)
+ (cd "$directory"; makepkg "${flags[@]}")
  mapfile -t built < <(cd "$directory"; makepkg --packagelist)
  [[ ${#built[@]} == 1 && -f "${built[0]}" ]] || { echo "Unexpected package output: $name" >&2; exit 1; }
  packages+=("${built[0]}")

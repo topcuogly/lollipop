@@ -20,7 +20,7 @@ The explicit flag is required by all host-mutating entry points. The normal user
 2. Fetch the pinned Calamares commit, validate its archive, and run source/configuration/regression tests.
 3. Verify the two snapshot repository database hashes and 102 direct official package version/file/checksum records against `package-direct.lock.json`.
 4. Initialize or reuse the local release signing key under ignored `state/signing/`, exporting only public verification material.
-5. Build Calamares, `lollipop-system`, `lollipop-decoration`, PhotoCraft, and Upscayl as a normal user. Verify sources through their preparation scripts/makepkg checksums. Sign the exact package outputs and create a signed local repository.
+5. Build Calamares, `lollipop-system`, `lollipop-decoration`, PhotoCraft, and Upscayl as a normal user. Verify sources through their preparation scripts/makepkg checksums. `lollipop-system` only copies its verified payload, so its package step skips runtime dependency checks on the headless builder; target package resolution still installs and checks those dependencies. Other recipes retain normal dependency checks. Sign the exact package outputs and create a signed local repository.
 6. Stage the live profile, removing package-owned files and injecting the public release keyring. Attach the build-only local repository and isolated package cache.
 7. Run the vendored mkarchiso script. Its hash and upstream commit are checked before use. The profile's customization hook installs default Flatpaks and their runtimes; failure stops the build.
 8. Write ISO checksums, builder package inventory, input clock/commits, build log, and public signing key to `out/`.

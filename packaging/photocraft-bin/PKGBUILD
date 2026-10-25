@@ -12,7 +12,7 @@ conflicts=('photocraft' 'photocraft-git' 'ai.storyteller.photocraft')
 source=('https://github.com/storytold/photocraft/releases/download/v0.14.0/photocraft-0.14.0-linux-x86_64.pkg.tar.zst')
 sha256sums=('f23ba1f4142834e2ceb75fe0dc4491726f41e9184e7c7081e986d6a243b10af2')
 noextract=('photocraft-0.14.0-linux-x86_64.pkg.tar.zst')
-options=('!strip')
+options=('!strip' '!debug')
 package() {
  mkdir -p "$srcdir/payload"
  bsdtar -xf "$srcdir/photocraft-0.14.0-linux-x86_64.pkg.tar.zst" -C "$srcdir/payload" usr

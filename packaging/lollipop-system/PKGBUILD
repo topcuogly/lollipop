@@ -4,6 +4,7 @@ pkgver=0.3
 pkgrel=1
 pkgdesc='Lollipop identity, desktop defaults and signed update/recovery tools'
 arch=('x86_64')
+options=('!debug')
 license=('GPL-3.0-only' 'MIT' 'MPL-2.0' 'BSD-3-Clause' 'LicenseRef-UserProvided')
 depends=('bash' 'python' 'gnupg' 'snapper' 'btrfs-progs' 'fastfetch'
          'coreutils' 'util-linux' 'tar' 'xz' 'sudo' 'pacman' 'flatpak' 'xdg-utils'
