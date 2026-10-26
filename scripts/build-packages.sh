@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: GPL-3.0-only
 set -euo pipefail
 ROOT=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
-source "$ROOT/build.env"
+source "$ROOT/build.conf"
 export SOURCE_DATE_EPOCH TZ=UTC LC_ALL=C GNUPGHOME="$ROOT/state/signing"
 [[ $EUID != 0 ]] || { echo 'Run package builds as the normal builder user.' >&2; exit 1; }
 [[ -f "$ROOT/state/signing-fingerprint" ]] || { echo 'Initialize release signing first.' >&2; exit 1; }

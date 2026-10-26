@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: GPL-3.0-only
 set -euo pipefail
 ROOT=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
-source "$ROOT/build.env"
+source "$ROOT/build.conf"
 export SOURCE_DATE_EPOCH TZ=UTC LC_ALL=C
 [[ ${1:-} == --disposable-builder && $EUID == 0 && -e /etc/arch-release && $(uname -m) == x86_64 ]] || { echo 'Use --disposable-builder on the dedicated Arch x86_64 builder VM.' >&2; exit 1; }
 work=${BUILD_WORK:-/var/tmp/lollipop-build-alpha03}
@@ -26,5 +26,5 @@ PYCONFIG
 bash "$ROOT/vendor/archiso/mkarchiso" -v -w "$work" -o "$ROOT/out" "$stage" 2>&1 | tee "$ROOT/out/build.log"
 (cd "$ROOT/out"; sha256sum ./*.iso > SHA256SUMS)
 pacman -Q > "$ROOT/out/builder-packages.txt"
-cp "$ROOT/build.env" "$ROOT/out/build-inputs.env"
+cp "$ROOT/build.conf" "$ROOT/out/build-inputs.conf"
 cp "$ROOT/state/release-public.asc" "$ROOT/out/release-public.asc"

@@ -6,8 +6,8 @@ lock=json.loads((root/'external-packages.lock.json').read_text())
 assert hashlib.sha256((root/'vendor/archiso/mkarchiso').read_bytes()).hexdigest()==lock['archiso']['sha256']
 assert (root/'profile/packages.x86_64').read_bytes()==(root/'packages/native.txt').read_bytes()
 assert (root/'profile/airootfs/usr/share/lollipop/flatpak-apps.txt').read_bytes()==(root/'packages/flatpak.txt').read_bytes()
-assert lock['archiso']['commit'] in (root/'build.env').read_text()
-assert lock['calamares']['commit'] in (root/'build.env').read_text()
+assert lock['archiso']['commit'] in (root/'build.conf').read_text()
+assert lock['calamares']['commit'] in (root/'build.conf').read_text()
 for name in ['calamares','lollipop-system','lollipop-decoration','photocraft-bin','upscayl-bin']:
  assert (root/'packaging'/name/'PKGBUILD').is_file()
 for folder in ['scripts','tests','profile/airootfs/usr/lib']:

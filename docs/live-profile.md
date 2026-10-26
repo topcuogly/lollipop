@@ -6,7 +6,7 @@ The live image uses systemd-boot on UEFI; GRUB is installed on the target system
 
 ## Package sources
 
-`profile/packages.x86_64` links to the canonical `packages/native.txt`. `profile/pacman.conf` selects the 2026-10-22 Arch snapshot for building; the target's repository configuration is in `profile/airootfs/etc/pacman.conf`. The build clock and pinned tool commits are recorded in `build.env`.
+`profile/packages.x86_64` links to the canonical `packages/native.txt`. `profile/pacman.conf` selects the 2026-10-22 Arch snapshot for building; the target's repository configuration is in `profile/airootfs/etc/pacman.conf`. The build clock and pinned tool commits are recorded in `build.conf`.
 
 Local packages must be built and supplied through a signed repository before mkarchiso runs. The pinned Archiso entry point and complete ISO orchestration are now imported; see [build instructions](build.md). The profile alone is not the full build command.
 

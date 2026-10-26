@@ -12,7 +12,7 @@ Copy or clone this repository into the VM, then run from its root:
 bash scripts/build-full.sh --disposable-builder
 ```
 
-The explicit flag is required by all host-mutating entry points. The normal user runs makepkg and manages signing state; sudo is used for builder preparation and ISO creation. Review `build.env` and `profile/pacman.conf` together before deliberately changing the snapshot.
+The explicit flag is required by all host-mutating entry points. The normal user runs makepkg and manages signing state; sudo is used for builder preparation and ISO creation. Review `build.conf` and `profile/pacman.conf` together before deliberately changing the snapshot.
 
 ## Sequence
 
